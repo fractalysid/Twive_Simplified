@@ -131,9 +131,9 @@
 //  LEFT SYMBOLS (and accents)
        		lsymbols_layer {
 		bindings = <
-		&trans    &kp IT_EXCL    &kp IT_LESS    &kp IT_GREAT	&kp IT_AND     	            &trans &trans &kp IT_EGRV &kp IT_EACU &kp IT_OGRV &trans
-		&kp IT_LBRC &kp IT_RBRC &kp IT_LPAR &kp IT_RPAR &kp IT_AT                 		    &trans &none  &kp IT_AGRV &kp IT_UGRV &kp IT_IGRV
-		&trans    &trans 	&kp IT_LBKT &kp IT_RBKT  &trans 	                            &trans &trans &trans &trans  &kp  IT_CEGR
+		&trans &kp IT_EXCL &kp IT_LESS &kp IT_GREAT &kp IT_AND               	            &trans &trans &kp IT_EGRV &kp IT_EACU &trans
+		&kp IT_LBRC &kp IT_RBRC &kp IT_LPAR &kp IT_RPAR &kp IT_AT                 		    &trans &none &kp IT_OGRV &kp IT_AGRV &kp IT_UGRV
+		&trans    &trans 	&kp IT_LBKT &kp IT_RBKT  &trans 	                            &trans &trans &trans &kp IT_IGRV  &kp IT_CEGR
 					                                &trans  &trans &trans 			        &trans &trans &trans
 		>;
 		};
