@@ -11,15 +11,35 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/bt.h>
 
+// Base colemak-dh layer
 #define COLEMAK                 0
+
+// Navigation layer with arrows, page up, down and so on
 #define NAVIGATION              1
+
+// Symbols accessed on the right side by pressing a key on the left side
 #define RIGHT_SYMBOLS           2
+
+// Symbols accessed on the left side by pressing a key on the right side
 #define LEFT_SYMBOLS            3
+
+// Only FN keys, this layer can definitely made richer
 #define FUNCTIONS               4
+
+// Numbers and operators
 #define NUMBERS                 5
+
+// The layer always accessible through the right thumb cluster with access to TAB, ESC, DELETE, CAPS WORD
+// GNOME layout switch, KEYBOARD layer and other special functions
 #define EXTRA                   6
+
+// Media keys
 #define MEDIA                   7
+
+// Keyboard functions like reset, bootloader mode and bluetooth management
 #define KEYBOARD                8
+
+// Qwerty layer in case I would like to use the keyboard for gaming
 #define QWERTY                  9
 
 &mt {
@@ -29,19 +49,23 @@
 
 / {
 
+    macros {
+           gmail: gmail {
+               label = "gmail_email";
+               compatible = "zmk,behavior-macro";
+               #binding-cells = <0>;
+               wait-ms = <30>;
+               tap-ms = <40>;
+               bindings
+                   = <
+                   &kp S &kp A &kp B &kp B &kp I &kp O
+                   >
+                   ;
+           };
+       };
+
     combos {
         compatible = "zmk,combos";
-
-/*
-    Per ora lo attivo passando per il layout KEYBOARD
-        // Switch to qwerty layout
-        switch_to_qwerty {
-          timeout-ms = <50>;
-            layers= <COLEMAK>
-            key-positions = <0 18>;
-            bindings = <&to COLEMAK>;
-        };
-*/
 
         // Get back to default layer
         escape_qwerty {
@@ -50,19 +74,9 @@
             key-positions = <0 18>;
             bindings = <&to COLEMAK>;
         };
+   };
 
-/*
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        tri_layer {
-            if-layers = <1 2>;
-            then-layer = <3>;
-        };
-    };
-    */
-    };
-
-behaviors {
+    behaviors {
         hl: homerow_layers {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_LAYERS";
@@ -94,6 +108,7 @@ behaviors {
 		};
 
 // NAVIGATION LAYER
+// TODO: posso pensare di aggiungere direttamente 2 tasti per switchare tra i desktop virtali senza tenere premuti più tasti
 		    navigation_layer {
 		bindings = <
 		&trans  &trans    &kp PAGE_UP    &trans    &trans            			&trans &trans   &trans   &trans  &trans
@@ -136,7 +151,7 @@ behaviors {
 		    numbers_layer {
 		bindings = <
 		&kp IT_FSLH  &kp N7  &kp N8  &kp  N9  &kp IT_PLUS    		&trans &trans &trans &trans &trans
-		&kp N0 &kp N1  &kp N2  &kp N3 &kp IT_MINUS                  &trans &trans &trans &none &trans
+		&kp N0 &kp N1  &kp N2  &kp N3 &kp IT_MINUS                  &trans &kp DOT &kp COMMA &none &trans
 		&kp IT_AST  &kp N4 &kp N5 &kp N6 &kp IT_EQL    			    &trans &trans &trans &trans &trans
 					           &trans  &trans &trans  			    &trans &trans &trans
 		>;
@@ -147,9 +162,9 @@ behaviors {
 		    extra_layer {
 		bindings = <
 		&kp ESC &none &kp LS(DOT) &trans &trans            			&none &kp K_COPY   &kp K_CUT   &kp K_UNDO  &kp DEL
-		&kp TAB &trans &trans &caps_word &trans                   	&kp LG(SPC) &kp LGUI  &trans &trans &kp RET
+		&kp TAB &trans &trans &caps_word &gmail                   	&kp LG(SPC) &kp LGUI  &trans &trans &kp RET
 		&trans &trans &trans &trans &trans    			            &trans &trans &trans &trans &trans
-					&mo KEYBOARD &trans &trans  					R&trans &trans &none
+					&mo KEYBOARD &trans &trans  					&trans &trans &none
 		>;
 		};
 
