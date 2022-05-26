@@ -62,6 +62,18 @@
     */
     };
 
+behaviors {
+        hl: homerow_layers {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_LAYERS";
+            #binding-cells = <2>;
+            tapping-term-ms = <220>;
+            quick_tap_ms = <125>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&kp>;
+        };
+    };
+
 // RIGHT NOW IT IS MEANT TO BE USED WITH THE ITALIAN QWERTY LAYOUT
 // MODIFIED FERRIS LAYOUT
 // https://github.com/qmk/qmk_firmware/tree/master/keyboards/ferris/keymaps/default
@@ -74,7 +86,7 @@
        		default_layer {
 		bindings = <
 		&kp Q &kp W &kp F &kp P &kp B 						                    &kp J &kp L  &kp U    &kp Y   &kp BKSP
-		&kp A &lt FUNCTIONS R &lt MEDIA S &lt RIGHT_SYMBOLS T &kp G 			&kp M &lt LEFT_SYMBOLS N &lt NAVIGATION E &lt NUMBERS I &kp O
+		&kp A &hl FUNCTIONS R &hl MEDIA S &hl RIGHT_SYMBOLS T &kp G 			&kp M &hl LEFT_SYMBOLS N &hl NAVIGATION E &hl NUMBERS I &kp O
 		&mt LSHFT Z &mt LCTRL X &mt LALT C &kp D &kp V				            &kp K &kp H  &mt LALT CMMA &mt LCTRL DOT &mt LSHFT IT_SQUOT
           	    &kp RET &none &none  		                &none &none &lt EXTRA SPC
 		>;
@@ -95,7 +107,7 @@
 		bindings = <
 		&kp IT_UGRV &trans &trans &trans &trans    	                     &kp IT_EGRV &kp IT_UNDER &kp IT_PIPE &kp IT_CARET &trans
 		&kp IT_CEGR &kp IT_IGRV &kp IT_AGRV &none &trans                 &kp IT_HASH &kp IT_MINUS &kp IT_QUES &kp IT_DQUOT &kp IT_AND
-		&trans &trans &trans &trans &trans	                             &kp IT_EACU &kp IT_TILDE &kp IT_BSLH &kp IT_BKTK  &kp IT_OGRAV
+		&trans &trans &trans &trans &trans	                             &kp IT_EACU &kp IT_TILDE &kp IT_BSLH &kp IT_BKTK  &kp IT_OGRV
 					                &trans  &trans &trans    			 &trans &trans &trans
 		>;
 		};
