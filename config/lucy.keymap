@@ -4,99 +4,166 @@
  * SPDX-License-Identifier: MIT
  */
 
+#include "./boards/shields/lucy/italian.keycodes"
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define COLEMAK                 0
+#define NAVIGATION              1
+#define RIGHT_SYMBOLS           2
+#define LEFT_SYMBOLS            3
+#define FUNCTIONS               4
+#define NUMBERS                 5
+#define EXTRA                   6
+#define MEDIA                   7
+#define KEYBOARD                8
+#define QWERTY                  9
 
 &mt {
-  //  flavor = "tap-preferred";
-   // tapping_term_ms = <200>;
+  // flavor = "tap-preferred";
+  // tapping_term_ms = <200>;
 };
 
-/ { 
+/ {
 
     combos {
         compatible = "zmk,combos";
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
-        };
-        
-         combo_tab {
-            timeout-ms = <50>;
-            key-positions = <10 11>;
-            bindings = <&kp TAB>;
-        };
-        
-            combo_ralt {
-            timeout-ms = <50>;
-            key-positions = <17 16>;
-            bindings = <&kp RALT>;
-        };
-        
-                    combo_lalt {
-            timeout-ms = <50>;
-            key-positions = <11 12>;
-            bindings = <&kp LALT>;
-        };
-        
-                           combo_lgui {
-            timeout-ms = <50>;
-            key-positions = <12 13>;
-            bindings = <&kp LGUI>;
-        };
-        
-        
-           combo_rgui {
-            timeout-ms = <50>;
-            key-positions = <17 18>;
-            bindings = <&kp RGUI>;
-        };
-        
 
-        
+        // Switch to qwerty layout
+        switch_to_qwerty {
+            timeout-ms = <50>;
+            layers= <COLEMAK>
+            key-positions = <0 18>;
+            bindings = <&to COLEMAK>;
+        };
+
+        // Get back to default layer
+        escape_qwerty {
+            timeout-ms = <50>;
+            layers= <QWERTY>
+            key-positions = <15 33>;
+            bindings = <&to COLEMAK>;
+        };
+
+// TODO: da fare
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <1 2>;
+            then-layer = <3>;
+        };
     };
+
+// RIGHT NOW IT IS MEANT TO BE USED WITH THE ITALIAN QWERTY LAYOUT
+// MODIFIED FERRIS LAYOUT
+// https://github.com/qmk/qmk_firmware/tree/master/keyboards/ferris/keymaps/default
 
         keymap {
                 compatible = "zmk,keymap";
-                
+
+//  COLEMAK-DH
        		default_layer {
 		bindings = <
-		&kp Q &kp W &kp E &kp R &kp T 						&kp Y &kp U  &kp I    &kp O   &kp P 
-		&kp A &kp S &kp D &kp F &kp G 			        	        &kp H &kp J &kp K &kp L &kp QUOT
-		&mt LSFT Z &kp X &kp C &kp V &kp B				        &kp N &kp M  &kp CMMA &kp DOT &mt LSFT RET
-          				&mo 1 &kp LCTL  				&kp SPC &mo 2 
+		&kp Q &kp W &kp F &kp P &kp B 						                    &kp J &kp L  &kp U    &kp Y   &kp BKSP
+		&mt LSHFT A &lt FUNCTIONS R &lt NAVIGATION S &lt RIGHT_SYMBOLS T &kp G 			&kp M &lt LEFT_SYMBOLS N &lt NAVIGATION E &lt NUMBERS I &mt LSHFT O
+		&mt LSHFT Z &mt LCTRL X &mt LALT C &kp D &kp V				            &kp K &kp H  &mt LALT CMMA &mt LCTRL DOT &mt LSHFT IT_SQUOT
+          	    &none &lt MEDIA RET &none  		                &none &lt EXTRA SPC &none
 		>;
 		};
 
-       		left_layer {
+// NAVIGATION LAYER
+		    navigation_layer {
 		bindings = <
-		&kp NUM_1  &kp NUM_2    &kp NUM_3    &kp NUM_4    &kp NUM_5		&kp NUM_6 &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp NUM_0 
-		&kp TAB    &kp LC(S)    &kp DQT      &kp PIPE2     &kp HASH 		&kp MINUS &kp EQL  &kp LBKT &kp RBKT  &kp DEL 
-		&kp ESC    &kp TILDE 	&kp NON_US_BSLH &kp NON_US_HASH  &kp TILDE2 	&kp MINUS &kp GRAVE &kp LBKT &kp RBKT  &kp DEL 
-					    &mo 1  &kp LGUI  					&kp RGUI &mo 2 
+		&trans  &trans    &kp PAGE_UP    &trans    &trans            			&trans &trans   &trans   &trans  &trans
+		&kp LEFT &kp UP &kp DOWN &kp RIGHT &trans  					            &trans &kp LGUI  &none &mt LALT LCTRL &mt LC(LA(LSHFT))
+		&trans  &kp HOME &kp PAGE_DOWN &kp END &trans   			            &trans &trans  &trans  &trans &trans
+					                &trans &trans &trans  			            &trans &trans &trans
 		>;
 		};
-		
-		right_layer {
+
+//  RIGHT SYMBOLS
+       		rsymbols_layer {
 		bindings = <
-		&kp BANG  &kp ATSN &kp HASH  &kp DLLR  &kp PRCT    			&kp CRRT  &kp AMPS &kp KMLT &kp LPRN &kp RPRN 
-		&kp HASH  &kp QMARK  &kp FSLH  &kp COLN  &kp SCLN 			&kp MINUS &kp KP_EQUAL  &kp LBRC  &kp RBRC   &kp BKSP
-		&kp LSFT  &kp KPLS &kp LBKT &kp RBKT   &kp BSLH    			&kp UNDER &kp LEFT &kp DOWN &kp UP  &kp RIGHT
-					  &mo 3 &kp LCTL  				&kp SPC  &mo 2 
+		&kp IT_UGRV &trans &trans &trans &trans    	                     &kp IT_EGRV &kp IT_UNDER &kp IT_PIPE &kp IT_CARET &trans
+		&kp IT_CEGR &kp IT_IGRV &kp IT_AGRV &none &trans                 &kp IT_HASH &kp IT_MINUS &kp IT_QUES &kp IT_DQUOT &kp IT_AND
+		&trans &trans &trans &trans &trans	                             &kp IT_EACU &kp IT_TILDE &kp IT_BSLH &kp IT_BKTK  &kp IT_EACU
+					                &trans  &trans &trans    			 &trans &trans &trans
+		>;
+		};
+
+//  LEFT SYMBOLS
+       		lsymbols_layer {
+		bindings = <
+		&trans    &kp LS(COMMA)    &kp IT_LESS    &kp IT_GREAT	&kp LS(DOT)     	        &kp IT_AND &kp IT_FSLH &kp IT_BSLH &kp IT_QUES &kp IT_CARET
+		&kp IT_LBRC &kp IT_RBRC    &kp IT_LPAR      &kp IT_RPAR     &kp IT_AT   		    &trans &none  &kp IT_USD &kp IT_EUR &kp IT_PND
+		&trans    &kp IT_EXCL 	&kp IT_LBKT &kp IT_RBKT  &trans 	                        &trans &trans &trans &trans  &trans
+					                                &trans  &trans &trans 			        &trans &trans &trans
+		>;
+		};
+
+// FUNCTIONS KEYS
+		    functions_layer {
+		bindings = <
+		&trans &trans &trans &trans &trans    		            &trans &kp F7 &kp F8 &kp F9 &kp F10
+		&trans &none &mt LALT LCTL &trans &trans 		        &trans &kp F4 &kp F5 &kp F6 &kp F11
+		&trans &trans &trans &trans &trans    			        &trans &kp F1 &kp F2 &kp F3 &kp F12
+					       &trans  &trans &trans  			    &trans &trans &trans
 		>;
 		};	
-		
-		tri_layer {
+// NUMBERS KEYS
+//TODO: per ricordarmi i codici degli accenti		&kp IT_AGRV  &kp IT_EGRV &kp IT_EACU &kp IT_OGRV   &kp IT_IGRV    			&kp IT_UGRV &kp IT_CEGR &kp CMMA &kp DOT  &none
+		    numbers_layer {
 		bindings = <
-		&kp NUM_1  &kp NUM_2    &kp NUM_3    &kp NUM_4    &kp NUM_5 			&trans &trans   &trans   &trans  &trans
-		&kp F1 &kp F2 &kp F3 &kp F4 &kp F5  						&trans &kp PG_UP  &kp K_VOL_UP &kp K_MUTE &trans 
-		&bt BT_CLR  &bt BT_NXT &bt BT_PRV &kp F6 &kp F7   				&trans &kp PG_DN  &kp K_VOL_DN  &trans &trans   
-					 &trans &trans  					&trans &trans 
+		&kp IT_FSLH  &kp N7  &kp N8  &kp  N9  &kp IT_PLUS    		&trans &trans &trans &trans &trans
+		&kp N0 &kp N1  &kp N2  &kp N3 &kp IT_MINUS                  &trans &trans &trans &none &trans
+		&kp IT_AST  &kp N4 &kp N5 &kp N6 &kp IT_EQL    			    &trans &trans &trans &trans &trans
+					           &trans  &trans &trans  			    &trans &trans &trans
 		>;
-		};	
-        
+		};
+
+// ALWAYS ACCESSIBLE
+// TODO: quì posso ancora aggiungere qualcosa
+		    extra_layer {
+		bindings = <
+		&none &none &kp LS(DOT) &kp ESC &none            			    &none &kp K_COPY   &kp K_CUT   &kp K_UNDO  &kp DEL
+		&kp TAB &trans &trans &kp RET &none                   			&none &kp LGUI  &trans &trans &trans
+		&capsword &trans &trans &trans &trans    			            &trans &trans &trans &trans &trans
+					&trans &tg KEYBOARD &trans  					    &trans &trans &trans
+		>;
+		};
+
+// MEDIA LAYER
+		    media_layer {
+		bindings = <
+		&trans  &trans &none &trans &trans 			                            &trans &trans   &trans   &trans  &trans
+		&none  &kp K_MUTE    &kp K_VOLUME_DOWN &kp K_VOLUME_UP &none  			&none &kp K_PLAY_PAUSE  &kp K_PREV &kp K_NEXT &kp K_STOP2
+		&kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC &none &none &none   			&trans &trans &trans &trans &trans
+				            	&trans &trans &trans  					        &trans &trans &trans
+		>;
+		};
+
+// KEYBOARD LAYER
+		    keyboard_layer {
+		bindings = <
+		&reset  &bootloader &none &none &out OUT_USB 			        &out OUT_BLE &none   &none   &bootloader  &reset
+		&none &none &bt BT_PRV &bt BT_NXT &bt BT_CLR  			        &to QWERTY &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
+		&none  &none &none &none &bt BT_CLR   				            &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
+				            	&trans &trans &trans  					&trans &trans &trans
+		>;
+		};
+
+//  QWERTY, mainly for gaming
+       		qwerty_layer {
+		bindings = <
+		&kp Q &kp W &kp E &kp R  &kp T 						&kp Y &kp U  &kp I &kp O &kp P
+		&kp A &kp S &kp D &kp F &kp G 			        	&kp H &kp J &kp K &kp L &kp BKSP
+		&mt LSHFT Z &kp X &kp C &kp V &kp B				    &kp K &kp H  &kp CMMA &kp DOT &kp IT_MINUS
+          				&kp RET &none &none   		        &none &none &kp SPC
+		>;
+		};
+
 	};
 };
