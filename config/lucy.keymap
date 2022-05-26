@@ -47,7 +47,7 @@
         escape_qwerty {
             timeout-ms = <50>;
             layers= <QWERTY>;
-            key-positions = <15 33>;
+            key-positions = <0 18>;
             bindings = <&to COLEMAK>;
         };
 
@@ -70,12 +70,13 @@
                 compatible = "zmk,keymap";
 
 //  COLEMAK-DH
+// TODO: quì posso addirittura aggiungere un &lt layer toggle sul pulsante del thumb cluster di sinistra
        		default_layer {
 		bindings = <
 		&kp Q &kp W &kp F &kp P &kp B 						                    &kp J &kp L  &kp U    &kp Y   &kp BKSP
-		&mt LSHFT A &lt FUNCTIONS R &lt NAVIGATION S &lt RIGHT_SYMBOLS T &kp G 			&kp M &lt LEFT_SYMBOLS N &lt NAVIGATION E &lt NUMBERS I &mt LSHFT O
+		&kp A &lt FUNCTIONS R &lt NAVIGATION S &lt RIGHT_SYMBOLS T &kp G 			&kp M &lt LEFT_SYMBOLS N &lt NUMBERS E &lt MEDIA I &kp O
 		&mt LSHFT Z &mt LCTRL X &mt LALT C &kp D &kp V				            &kp K &kp H  &mt LALT CMMA &mt LCTRL DOT &mt LSHFT IT_SQUOT
-          	    &lt MEDIA RET &none &none  		                &none &none &lt EXTRA SPC
+          	    &kp RET &none &none  		                &none &none &lt EXTRA SPC
 		>;
 		};
 
@@ -135,7 +136,7 @@
 		&none &none &kp LS(DOT) &kp ESC &none            			    &none &kp K_COPY   &kp K_CUT   &kp K_UNDO  &kp DEL
 		&kp TAB &trans &trans &kp RET &none                   			&kp LG(SPC) &kp LGUI  &trans &trans &trans
 		&caps_word &trans &trans &trans &trans    			            &trans &trans &trans &trans &trans
-					&mo KEYBOARD &trans &trans  					    &trans &trans &trans
+					&to KEYBOARD &trans &trans  					    &trans &trans &none
 		>;
 		};
 
