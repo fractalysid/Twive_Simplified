@@ -29,7 +29,7 @@
 
 / {
 
-    combos {
+/*    combos {
         compatible = "zmk,combos";
 
         // Switch to qwerty layout
@@ -47,7 +47,6 @@
             key-positions = <15 33>;
             bindings = <&to COLEMAK>;
         };
-
 // TODO: da fare
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -56,6 +55,7 @@
             then-layer = <3>;
         };
     };
+*/
 
 // RIGHT NOW IT IS MEANT TO BE USED WITH THE ITALIAN QWERTY LAYOUT
 // MODIFIED FERRIS LAYOUT
@@ -130,8 +130,8 @@
 		bindings = <
 		&none &none &kp LS(DOT) &kp ESC &none            			    &none &kp K_COPY   &kp K_CUT   &kp K_UNDO  &kp DEL
 		&kp TAB &trans &trans &kp RET &none                   			&none &kp LGUI  &trans &trans &trans
-		&capsword &trans &trans &trans &trans    			            &trans &trans &trans &trans &trans
-					&trans &tg KEYBOARD &trans  					    &trans &trans &trans
+		&caps_word &trans &trans &trans &trans    			            &trans &trans &trans &trans &trans
+					&trans &mo KEYBOARD &trans  					    &trans &trans &trans
 		>;
 		};
 
