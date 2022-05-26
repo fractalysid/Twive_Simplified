@@ -84,7 +84,7 @@
 		    navigation_layer {
 		bindings = <
 		&trans  &trans    &kp PAGE_UP    &trans    &trans            			&trans &trans   &trans   &trans  &trans
-		&kp LEFT &kp UP &kp DOWN &kp RIGHT &trans  					            &trans &kp LGUI  &none &mt LALT LCTRL &mt LC(LA(LSHFT))
+		&kp LEFT &kp UP &kp DOWN &kp RIGHT &trans  					            &trans &kp LGUI  &none &kp LC(LALT) &kp LC(LA(LSHFT))
 		&trans  &kp HOME &kp PAGE_DOWN &kp END &trans   			            &trans &trans  &trans  &trans &trans
 					                &trans &trans &trans  			            &trans &trans &trans
 		>;
@@ -95,7 +95,7 @@
 		bindings = <
 		&kp IT_UGRV &trans &trans &trans &trans    	                     &kp IT_EGRV &kp IT_UNDER &kp IT_PIPE &kp IT_CARET &trans
 		&kp IT_CEGR &kp IT_IGRV &kp IT_AGRV &none &trans                 &kp IT_HASH &kp IT_MINUS &kp IT_QUES &kp IT_DQUOT &kp IT_AND
-		&trans &trans &trans &trans &trans	                             &kp IT_EACU &kp IT_TILDE &kp IT_BSLH &kp IT_BKTK  &kp IT_EACU
+		&trans &trans &trans &trans &trans	                             &kp IT_EACU &kp IT_TILDE &kp IT_BSLH &kp IT_BKTK  &kp IT_OGRAV
 					                &trans  &trans &trans    			 &trans &trans &trans
 		>;
 		};
