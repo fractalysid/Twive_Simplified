@@ -20,7 +20,7 @@
 // Symbols accessed on the right side by pressing a key on the left side
 #define RIGHT_SYMBOLS           2
 
-// Symbols accessed on the left side by pressing a key on the right side
+// Symbols accessed on the left side by pressing a key on the right side, also includes accented letters
 #define LEFT_SYMBOLS            3
 
 // Only FN keys, this layer can definitely made richer
@@ -121,19 +121,19 @@
 //  RIGHT SYMBOLS
        		rsymbols_layer {
 		bindings = <
-		&kp IT_UGRV &trans &trans &trans &trans    	                     &kp IT_EGRV &kp IT_UNDER &kp IT_PIPE &kp IT_CARET &trans
-		&kp IT_CEGR &kp IT_IGRV &kp IT_AGRV &none &trans                 &kp IT_HASH &kp IT_MINUS &kp IT_QUES &kp IT_DQUOT &kp IT_AND
-		&trans &trans &trans &trans &trans	                             &kp IT_EACU &kp IT_TILDE &kp IT_BSLH &kp IT_BKTK  &kp IT_OGRV
-					                &trans  &trans &trans    			 &trans &trans &trans
+		&trans &trans &trans &trans &trans    	                        &trans &kp IT_MINUS &kp IT_PIPE &kp IT_QUES &trans
+		&kp IT_PND  &kp IT_EUR &kp IT_USD &none &trans                  &kp IT_HASH &kp IT_UNDER &kp IT_QUES &kp IT_DQUOT &kp IT_AND
+		&trans &trans &trans &trans &trans	                            &trans &kp IT_TILDE &kp IT_BSLH &kp IT_BKTK  &kp IT_CARET
+					                &trans  &trans &trans    			&trans &trans &trans
 		>;
 		};
 
-//  LEFT SYMBOLS
+//  LEFT SYMBOLS (and accents)
        		lsymbols_layer {
 		bindings = <
-		&trans    &kp LS(COMMA)    &kp IT_LESS    &kp IT_GREAT	&kp LS(DOT)     	        &kp IT_AND &kp IT_FSLH &kp IT_BSLH &kp IT_QUES &kp IT_CARET
-		&kp IT_LBRC &kp IT_RBRC    &kp IT_LPAR      &kp IT_RPAR     &kp IT_AT   		    &trans &none  &kp IT_USD &kp IT_EUR &kp IT_PND
-		&trans    &kp IT_EXCL 	&kp IT_LBKT &kp IT_RBKT  &trans 	                        &trans &trans &trans &trans  &trans
+		&trans    &kp IT_EXCL    &kp IT_LESS    &kp IT_GREAT	&kp IT_AND     	            &trans &trans &kp IT_EGRV &kp IT_EACU &kp IT_OGRV &trans
+		&kp IT_LBRC &kp IT_RBRC &kp IT_LPAR &kp IT_RPAR &kp IT_AT                 		    &trans &none  &kp IT_AGRV &kp IT_UGRV &kp IT_IGRV
+		&trans    &trans 	&kp IT_LBKT &kp IT_RBKT  &trans 	                            &trans &trans &trans &trans  &kp  IT_CEGR
 					                                &trans  &trans &trans 			        &trans &trans &trans
 		>;
 		};
