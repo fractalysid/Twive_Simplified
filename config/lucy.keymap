@@ -143,13 +143,13 @@ behaviors {
 		};
 
 // ALWAYS ACCESSIBLE
-// TODO: quì posso ancora aggiungere qualcosa
+// TODO: aggiungere qualcosa di molto usato su indice destro home row, per ora lascio none
 		    extra_layer {
 		bindings = <
-		&none &none &kp LS(DOT) &kp ESC &none            			    &none &kp K_COPY   &kp K_CUT   &kp K_UNDO  &kp DEL
-		&kp TAB &trans &trans &kp RET &none                   			&kp LG(SPC) &kp LGUI  &trans &trans &trans
-		&caps_word &trans &trans &trans &trans    			            &trans &trans &trans &trans &trans
-					&mo KEYBOARD &trans &trans  					    &trans &trans &none
+		&kp ESC &none &kp LS(DOT) &trans &trans            			&none &kp K_COPY   &kp K_CUT   &kp K_UNDO  &kp DEL
+		&kp TAB &trans &trans &caps_word &trans                   	&kp LG(SPC) &kp LGUI  &trans &trans &kp RET
+		&trans &trans &trans &trans &trans    			            &trans &trans &trans &trans &trans
+					&mo KEYBOARD &trans &trans  					R&trans &trans &none
 		>;
 		};
 
