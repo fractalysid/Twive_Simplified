@@ -74,7 +74,7 @@
        		default_layer {
 		bindings = <
 		&kp Q &kp W &kp F &kp P &kp B 						                    &kp J &kp L  &kp U    &kp Y   &kp BKSP
-		&kp A &lt FUNCTIONS R &lt NAVIGATION S &lt RIGHT_SYMBOLS T &kp G 			&kp M &lt LEFT_SYMBOLS N &lt NUMBERS E &lt MEDIA I &kp O
+		&kp A &lt FUNCTIONS R &lt MEDIA S &lt RIGHT_SYMBOLS T &kp G 			&kp M &lt LEFT_SYMBOLS N &lt NAVIGATION E &lt NUMBERS I &kp O
 		&mt LSHFT Z &mt LCTRL X &mt LALT C &kp D &kp V				            &kp K &kp H  &mt LALT CMMA &mt LCTRL DOT &mt LSHFT IT_SQUOT
           	    &kp RET &none &none  		                &none &none &lt EXTRA SPC
 		>;
@@ -136,16 +136,16 @@
 		&none &none &kp LS(DOT) &kp ESC &none            			    &none &kp K_COPY   &kp K_CUT   &kp K_UNDO  &kp DEL
 		&kp TAB &trans &trans &kp RET &none                   			&kp LG(SPC) &kp LGUI  &trans &trans &trans
 		&caps_word &trans &trans &trans &trans    			            &trans &trans &trans &trans &trans
-					&to KEYBOARD &trans &trans  					    &trans &trans &none
+					&mo KEYBOARD &trans &trans  					    &trans &trans &none
 		>;
 		};
 
 // MEDIA LAYER
 		    media_layer {
 		bindings = <
-		&trans  &trans &none &trans &trans 			                            &trans &trans   &trans   &trans  &trans
-		&none  &kp K_MUTE    &kp K_VOLUME_DOWN &kp K_VOLUME_UP &none  			&none &kp K_PLAY_PAUSE  &kp K_PREV &kp K_NEXT &kp K_STOP2
-		&kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC &none &none &none   			&trans &trans &trans &trans &trans
+		&trans  &trans &none &trans &trans 			                            &trans &kp K_VOLUME_DOWN   &kp K_VOLUME_UP   &kp K_MUTE  &trans
+		&trans  &trans &none &trans &trans  			                        &trans &kp K_PLAY_PAUSE  &kp K_PREV &kp K_NEXT &kp K_STOP2
+		&trans  &trans &trans &trans &trans   			                        &trans &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &trans &trans
 				            	&trans &trans &trans  					        &trans &trans &trans
 		>;
 		};
@@ -155,7 +155,7 @@
 		bindings = <
 		&reset  &bootloader &none &none &out OUT_USB 			        &out OUT_BLE &none   &none   &bootloader  &reset
 		&none &none &bt BT_PRV &bt BT_NXT &bt BT_CLR  			        &to QWERTY &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
-		&none  &none &none &none &bt BT_CLR   				            &bt BT_SEL 0 &bt BT_SEL 1  &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4
+		&none  &none &none &none &bt BT_CLR   				            &trans &trans &trans &trans &trans
 				            	&trans &trans &trans  					&trans &trans &trans
 		>;
 		};
