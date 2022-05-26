@@ -29,16 +29,16 @@
 
 / {
 
-/*    combos {
+    combos {
         compatible = "zmk,combos";
 
         // Switch to qwerty layout
-        switch_to_qwerty {
-            timeout-ms = <50>;
+        /*switch_to_qwerty {
+          p  timeout-ms = <50>;
             layers= <COLEMAK>
             key-positions = <0 18>;
             bindings = <&to COLEMAK>;
-        };
+        };*/
 
         // Get back to default layer
         escape_qwerty {
@@ -47,6 +47,7 @@
             key-positions = <15 33>;
             bindings = <&to COLEMAK>;
         };
+/*
 // TODO: da fare
     conditional_layers {
         compatible = "zmk,conditional-layers";
@@ -129,7 +130,7 @@
 		    extra_layer {
 		bindings = <
 		&none &none &kp LS(DOT) &kp ESC &none            			    &none &kp K_COPY   &kp K_CUT   &kp K_UNDO  &kp DEL
-		&kp TAB &trans &trans &kp RET &none                   			&none &kp LGUI  &trans &trans &trans
+		&kp TAB &trans &trans &kp RET &none                   			&kp LG(SPC) &kp LGUI  &trans &trans &trans
 		&caps_word &trans &trans &trans &trans    			            &trans &trans &trans &trans &trans
 					&trans &mo KEYBOARD &trans  					    &trans &trans &trans
 		>;
