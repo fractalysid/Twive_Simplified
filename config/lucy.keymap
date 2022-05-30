@@ -12,7 +12,7 @@
 #include <dt-bindings/zmk/bt.h>
 
 // Base colemak-dh layer
-#define COLEMAK                 0
+#define DEFAULT                 0
 
 // Navigation layer with arrows, page up, down and so on
 #define NAVIGATION              1
@@ -43,8 +43,10 @@
 #define QWERTY                  9
 
 &mt {
-  flavor = "tap-preferred";
-  tapping_term_ms = <300>;
+    //tapping-term-ms = <300>;
+    //quick_tap_ms = <0>;
+    //flavor = "tap-preferred";
+    //retro-tap;
 };
 
 / {
@@ -72,21 +74,67 @@
             timeout-ms = <50>;
             layers= <QWERTY>;
             key-positions = <0 18>;
-            bindings = <&to COLEMAK>;
+            bindings = <&to DEFAULT>;
         };
    };
 
     behaviors {
-        hl: homerow_layers {
+        // TODO: posso modificare anche questo se noto che commetto errori
+        // aggiungere anche il positional hold tap e quindi farne 2
+        hl_left: homerow_layers {
             compatible = "zmk,behavior-hold-tap";
-            label = "HOMEROW_LAYERS";
+            label = "HOMEROW_LAYERS_LEFT";
             #binding-cells = <2>;
             tapping-term-ms = <220>;
             quick_tap_ms = <125>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
+            hold-trigger-key-positions = <5 6 7 8 9>;    // <---[[right-hand keys]]
         };
 
+        hl_right: homerow_layers {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROW_LAYERS_RIGHT";
+            #binding-cells = <2>;
+            tapping-term-ms = <220>;
+            quick_tap_ms = <125>;
+            flavor = "tap-preferred";
+            bindings = <&mo>, <&kp>;
+            hold-trigger-key-positions = <0 1 2 3 4>;    // <---[[left-hand keys]]
+
+        };
+
+    lh_pht: left_hand_positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LEFT_POSITIONAL_HOLD_TAP";
+            #binding-cells = <2>;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <5 6 7 8 9>;    // <---[[right-hand keys]]
+        };
+
+    rh_pht: right_hand_positional_hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "RIGHT_POSITIONAL_HOLD_TAP";
+            #binding-cells = <2>;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <100>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+            hold-trigger-key-positions = <0 1 2 3 4>;    // <---[[left-hand keys]]
+       };
+
+    bm: bottomrow_mods {
+            compatible = "zmk,behavior-hold-tap";
+            label = "BOTTOMROW_MODS";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+       };
     };
 
 // RIGHT NOW IT IS MEANT TO BE USED WITH THE ITALIAN QWERTY LAYOUT
@@ -96,14 +144,14 @@
         keymap {
                 compatible = "zmk,keymap";
 
-//  COLEMAK-DH
+//  DEFAULT-DH
 // TODO: quì posso addirittura aggiungere un &lt layer toggle sul pulsante del thumb cluster di sinistra
        		default_layer {
 		bindings = <
-		&kp Q &kp W &kp F &kp P &kp B 						                    &kp J &kp L  &kp U    &kp Y   &kp BKSP
-		&kp A &hl FUNCTIONS R &hl MEDIA S &hl RIGHT_SYMBOLS T &kp G 			&kp M &hl LEFT_SYMBOLS N &hl NAVIGATION E &hl NUMBERS I &kp O
-		&mt LSHFT Z &mt LCTRL X &mt LALT C &kp D &kp V				            &kp K &kp H  &mt LALT CMMA &mt LCTRL DOT &mt LSHFT IT_SQUOT
-          	    &kp RET &none &none  		                &none &none &lt EXTRA SPC
+		&kp Q &kp W &kp F &kp P &kp B 						                                &kp J &kp L  &kp U    &kp Y   &kp BKSP
+		&kp A &hl_left FUNCTIONS R &hl_left MEDIA S &hl_left RIGHT_SYMBOLS T &kp G 			            &kp M &hl_right LEFT_SYMBOLS N &hl_right NAVIGATION E &hl_right NUMBERS I &kp O
+		&bm LSHFT Z &bm LCTRL X &bm LALT C &kp D &kp V				                        &kp K &kp H  &bm LALT CMMA &bm LCTRL DOT &bm LSHFT IT_SQUOT
+          	                                    &kp RET &none &none  		                &none &none &lt EXTRA SPC
 		>;
 		};
 
