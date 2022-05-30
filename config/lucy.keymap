@@ -185,11 +185,12 @@
 
 //  RIGHT SYMBOLS
 // IT_CARET si trova su IT_IGRV con lo shift di sinistra
+// manca IT_CEGR
        		rsymbols_layer {
 		bindings = <
 		&trans &trans &trans &trans &trans    	                        &kp IT_MINUS &kp IT_FSLH &kp IT_BSLH &kp IT_BKTK &trans
 		&trans &trans &trans &none &trans                               &kp IT_UNDER &kp IT_OGRV &kp IT_AGRV &kp IT_EGRV &kp IT_EACU
-		&trans &trans &trans &trans &trans	                            &kp IT_PND &kp IT_EUR &kp IT_USD &kp IT_CEGR  &kp  IT_IGRV
+		&trans &trans &trans &trans &trans	                            &kp IT_PND &kp IT_EUR &kp IT_USD &kp IT_UGRV  &kp  IT_IGRV
 					                &trans  &trans &trans    			&trans &trans &trans
 		>;
 		};
@@ -208,7 +209,7 @@
 		    functions_layer {
 		bindings = <
 		&trans &trans &trans &trans &trans    		                            &trans &kp F7 &kp F8 &kp F9 &kp F10
-		&trans &none &mt LALT LCTL &trans &sysrq_emergency_reboot 		        &trans &kp F4 &kp F5 &kp F6 &kp F11
+		&trans &none &mt LALT LCTL &kp LALT &sysrq_emergency_reboot 		    &trans &kp F4 &kp F5 &kp F6 &kp F11
 		&trans &trans &trans &trans &trans    			                        &trans &kp F1 &kp F2 &kp F3 &kp F12
 					       &trans  &trans &trans  	                		    &trans &trans &trans
 		>;
