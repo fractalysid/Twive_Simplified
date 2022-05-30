@@ -100,7 +100,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_LAYERS_LEFT";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
             quick_tap_ms = <80>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
@@ -111,7 +111,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_LAYERS_RIGHT";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
             quick_tap_ms = <80>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
@@ -165,10 +165,10 @@
 // TODO: quì posso addirittura aggiungere un &lt layer toggle sul pulsante del thumb cluster di sinistra
        		default_layer {
 		bindings = <
-		&kp Q &kp W &kp F &kp P &kp B 						                                &kp J &kp L  &kp U    &kp Y   &kp BKSP
+		&kp Q &kp W &kp F &kp P &kp B 						                                            &kp J &kp L  &kp U    &kp Y   &kp BKSP
 		&kp A &hl_left FUNCTIONS R &hl_left MEDIA S &hl_left RIGHT_SYMBOLS T &kp G 			            &kp M &hl_right LEFT_SYMBOLS N &hl_right NAVIGATION E &hl_right NUMBERS I &kp O
 		&lh_pht LSHFT Z &lh_pht LCTRL X &lh_pht LALT C &kp D &kp V				                        &kp K &kp H  &rh_pht LALT CMMA &rh_pht LCTRL DOT &rh_pht LSHFT IT_SQUOT
-          	                                    &kp RET &none &none  		                &none &none &lt UTILITY SPC
+          	                                    &kp RET &none &none  		                            &none &none &lt UTILITY SPC
 		>;
 		};
 
@@ -178,17 +178,18 @@
 		bindings = <
 		&kp HOME &kp PAGE_UP &kp PAGE_DOWN &kp END &trans            	        &trans &trans   &trans   &trans  &trans
 		&kp LEFT &kp UP &kp DOWN &kp RIGHT &trans  					            &trans &kp LGUI  &none &kp LC(LALT) &kp LC(LA(LSHFT))
-		&trans  &kp LC(LA(UP)) &kp LC(LA(DOWN)) &trans &trans   			            &trans &trans  &trans  &trans &trans
+		&trans  &kp LC(LA(UP)) &kp LC(LA(DOWN)) &trans &trans   			    &trans &trans  &trans  &trans &trans
 					                &trans &trans &trans  			            &trans &trans &trans
 		>;
 		};
 
 //  RIGHT SYMBOLS
+// IT_CARET si trova su IT_IGRV con lo shift di sinistra
        		rsymbols_layer {
 		bindings = <
-		&trans &trans &trans &trans &trans    	                        &trans &kp IT_MINUS &kp IT_PIPE &kp IT_QUES &trans
-		&kp IT_PND  &kp IT_EUR &kp IT_USD &none &trans                  &kp IT_HASH &kp IT_UNDER &kp IT_QUES &kp IT_DQUOT &kp IT_AND
-		&trans &trans &trans &trans &trans	                            &trans &kp IT_TILDE &kp IT_BSLH &kp IT_BKTK  &kp IT_CARET
+		&trans &trans &trans &trans &trans    	                        &kp IT_MINUS &kp IT_FSLH &kp IT_BSLH &kp IT_BKTK &trans
+		&trans &trans &trans &none &trans                               &kp IT_UNDER &kp IT_OGRV &kp IT_AGRV &kp IT_EGRV &kp IT_EACU
+		&trans &trans &trans &trans &trans	                            &kp IT_PND &kp IT_EUR &kp IT_USD &kp IT_CEGR  &kp  IT_IGRV
 					                &trans  &trans &trans    			&trans &trans &trans
 		>;
 		};
@@ -196,9 +197,9 @@
 //  LEFT SYMBOLS (and accents)
        		lsymbols_layer {
 		bindings = <
-		&trans &kp IT_EXCL &kp IT_LESS &kp IT_GREAT &kp IT_AND               	            &trans &trans &kp IT_EGRV &kp IT_EACU &trans
-		&kp IT_LBRC &kp IT_RBRC &kp IT_LPAR &kp IT_RPAR &kp IT_AT                 		    &trans &none &kp IT_OGRV &kp IT_AGRV &kp IT_UGRV
-		&trans    &trans 	&kp IT_LBKT &kp IT_RBKT  &trans 	                            &trans &trans &kp IT_IGRV &kp IT_CEGR &trans
+		&kp IT_EXCL &kp IT_DQUOT &kp IT_AT &kp IT_HASH &kp IT_AND               	        &trans &trans &trans &trans &trans
+		&kp IT_LBRC &kp IT_RBRC &kp IT_LPAR &kp IT_RPAR &kp IT_PIPE                 		&trans &none &trans &trans &trans
+		&kp IT_LESS &kp IT_TILDE &kp IT_LBKT &kp IT_RBKT  &kp IT_GREAT                      &trans &trans &trans &trans &trans
 					                                &trans  &trans &trans 			        &trans &trans &trans
 		>;
 		};
@@ -213,6 +214,7 @@
 		>;
 		};	
 // NUMBERS KEYS
+// TODO: posso valutare l'idea di mettere lo shift così da avere + e * e - e _ in 2 tasti
 		    numbers_layer {
 		bindings = <
 		&kp IT_FSLH  &kp N7  &kp N8  &kp  N9  &kp IT_PLUS    		&trans &trans &trans &trans &trans
