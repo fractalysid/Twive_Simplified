@@ -22,4 +22,4 @@ There are a lot of duplicated symbols right now so it should be easily customiza
 
 I will probably optimize the use of the RIGHT and LEFT symbols layouts but the base principles and structure should remain unchanged.
 
-Thanks pierrechevalier83 for sharing your layout with many brilliants concepts. I would have spent months thinking to something similar.
+Thanks pierrechevalier83 for sharing your layout with so many brilliants ideas. I would have spent months thinking to something similar.
