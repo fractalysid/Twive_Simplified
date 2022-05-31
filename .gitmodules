@@ -1,0 +1,3 @@
+[submodule "config/boards/shields/zmk-lucy-shield"]
+	path = config/boards/shields/lucy
+	url = https://github.com/fractalysid/zmk-lucy-shield
