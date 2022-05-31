@@ -201,9 +201,9 @@
 // NAVIGATION LAYER
 		    navigation_layer {
 		bindings = <
-		&kp HOME &kp PAGE_UP &kp PAGE_DOWN &kp END &trans            	        &trans &trans   &trans   &trans  &trans
-		&kp LEFT &kp UP &kp DOWN &kp RIGHT &trans  					            &trans &kp LGUI  &none &kp LC(LALT) &kp LC(LA(LSHFT))
-		&trans  &kp LC(LA(UP)) &kp LC(LA(DOWN)) &trans &trans   			    &trans &trans  &trans  &trans &trans
+		&kp HOME &kp PAGE_UP &kp PAGE_DOWN &kp END &kp LC(LS(TAB))           &trans &trans   &trans   &trans  &trans
+		&kp LEFT &kp UP &kp DOWN &kp RIGHT &kp LC(TAB)		                    &trans &kp LGUI  &none &trans &trans
+		&trans  &kp LC(LA(UP)) &kp LC(LA(DOWN)) &kp LA(TAB) &trans   		    &trans &trans  &trans  &trans &trans
 					                &trans &trans &trans  			            &trans &trans &trans
 		>;
 		};
