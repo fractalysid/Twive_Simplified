@@ -14,33 +14,36 @@
 // Base colemak-dh layer
 #define DEFAULT                 0
 
-// Navigation layer with arrows, page up, down and so on
-#define NAVIGATION              1
-
-// Symbols accessed on the right side by pressing a key on the left side
-#define RIGHT_SYMBOLS           2
-
-// Symbols accessed on the left side by pressing a key on the right side, also includes accented letters
-#define LEFT_SYMBOLS            3
-
-// Only FN keys, this layer can definitely made richer
-#define FUNCTIONS               4
-
-// Numbers and operators
-#define NUMBERS                 5
-
 // The layer always accessible through the right thumb cluster with access to TAB, ESC, DELETE, CAPS WORD
 // GNOME layout switch, KEYBOARD layer and other special functions
-#define UTILITY                 6
+#define UTILITY                 1
+
+// Common keys, like those used in the shell, accents and so on
+#define COMMON                  2
+
+// Navigation layer with arrows, page up, down and so on
+#define NAVIGATION              3
+
+// Symbols accessed on the right side by pressing a key on the left side
+#define RIGHT_SYMBOLS           4
+
+// Symbols accessed on the left side by pressing a key on the right side, also includes accented letters
+#define LEFT_SYMBOLS            5
+
+// Only FN keys, this layer can definitely made richer
+#define FUNCTIONS               6
+
+// Numbers and operators
+#define NUMBERS                 7
 
 // Media keys
-#define MEDIA                   7
+#define MEDIA                   8
 
 // Keyboard functions like reset, bootloader mode and bluetooth management
-#define KEYBOARD                8
+#define KEYBOARD                9
 
 // Qwerty layer in case I would like to use the keyboard for gaming
-#define QWERTY                  9
+#define QWERTY                  10
 
 &mt {
     //tapping-term-ms = <300>;
@@ -168,7 +171,27 @@
 		&kp Q &kp W &kp F &kp P &kp B 						                                            &kp J &kp L  &kp U    &kp Y   &kp BKSP
 		&kp A &hl_left FUNCTIONS R &hl_left MEDIA S &hl_left RIGHT_SYMBOLS T &kp G 			            &kp M &hl_right LEFT_SYMBOLS N &hl_right NAVIGATION E &hl_right NUMBERS I &kp O
 		&lh_pht LSHFT Z &lh_pht LCTRL X &lh_pht LALT C &kp D &kp V				                        &kp K &kp H  &rh_pht LALT CMMA &rh_pht LCTRL DOT &rh_pht LSHFT IT_SQUOT
-          	                                    &kp RET &none &none  		                            &none &none &lt UTILITY SPC
+          	                                    &lt COMMON RET &none &none  		                    &none &none &lt UTILITY SPC
+		>;
+		};
+
+// UTILITY LAYER, ALWAYS ACCESSIBLE
+		    utility_layer {
+		bindings = <
+		&kp ESC &none &caps_word &trans &trans            			    &kp INSERT &kp SYSREQ &kp PRINTSCREEN &trans &kp DEL
+		&kp TAB &sk LALT &sk LCTRL &sk LSHIFT &gmail                   	&kp LG(SPC) &kp LGUI  &trans &trans &kp RET
+		&sk LGUI &trans &trans &trans &trans    			            &trans &trans &trans &trans &trans
+					&mo KEYBOARD &trans &trans  					    &trans &trans &none
+		>;
+		};
+
+// COMMON LAYER with commonly accessed symbols like accents and shell
+            common_layer {
+		bindings = <
+		&kp ESC &none &caps_word &trans &trans            			    &kp INSERT &kp SYSREQ &kp PRINTSCREEN &trans &kp DEL
+		&kp TAB &sk LALT &sk LCTRL &sk LSHIFT &gmail                   	&kp LG(SPC) &kp LGUI  &trans &trans &kp RET
+		&sk LGUI &trans &trans &trans &trans    			            &trans &trans &trans &trans &trans
+					&none &trans &trans  					    &trans &trans &trans
 		>;
 		};
 
@@ -225,17 +248,6 @@
 		>;
 		};
 
-// UTILITY LAYER, ALWAYS ACCESSIBLE
-// TODO: aggiungere qualcosa di molto usato su indice destro home row, per ora lascio none
-		    extra_layer {
-		bindings = <
-		&kp ESC &none &caps_word &trans &trans            			&kp INSERT &kp SYSREQ &kp PRINTSCREEN &trans &kp DEL
-		&kp TAB &sk LALT &sk LCTRL &sk LSHIFT &gmail                   	&kp LG(SPC) &kp LGUI  &trans &trans &kp RET
-		&sk LGUI &trans &trans &trans &trans    			            &trans &trans &trans &trans &trans
-					&mo KEYBOARD &trans &trans  					    &trans &trans &none
-		>;
-		};
-
 // MEDIA LAYER
 		    media_layer {
 		bindings = <
@@ -256,7 +268,7 @@
 		>;
 		};
 
-//  QWERTY, mainly for gaming
+//  QWERTY, mainly for gaming or letting others try the keyboard
        		qwerty_layer {
 		bindings = <
 		&kp Q &kp W &kp E &kp R  &kp T 						&kp Y &kp U  &kp I &kp O &kp P
