@@ -188,10 +188,10 @@
 // COMMON LAYER with commonly accessed symbols like accents and shell
             common_layer {
 		bindings = <
-		&kp ESC &none &caps_word &trans &trans            			    &kp INSERT &kp SYSREQ &kp PRINTSCREEN &trans &kp DEL
-		&kp TAB &sk LALT &sk LCTRL &sk LSHIFT &gmail                   	&kp LG(SPC) &kp LGUI  &trans &trans &kp RET
-		&sk LGUI &trans &trans &trans &trans    			            &trans &trans &trans &trans &trans
-					&none &trans &trans  					    &trans &trans &trans
+		&trans &none &kp IT_UGRV &kp IT_EACU &trans            			    &trans &kp IT_AND &kp IT_PIPE &kp IT_TILDE &trans
+		&kp IT_IGRV &kp IT_AGRV &kp IT_OGRV &kp IT_EGRV &trans              &trans &kp IT_FSLH &kp DOT &kp IT_MINUS &trans
+		&trans &trans &trans &trans &trans    			                    &trans &kp IT_BSLH &kp IT_BKTK &kp IT_LESS &kp IT_GREAT
+					&none &trans &trans  					                &trans &trans &trans
 		>;
 		};
 
