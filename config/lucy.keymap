@@ -231,7 +231,7 @@
 		bindings = <
 		&kp ESC &none &kp LS(DOT) &caps_word &trans            			&kp INSERT &kp SYSREQ &kp PRINTSCREEN &trans &kp DEL
 		&kp TAB &sk LALT &sk LCTRL &sk LSHIFT &gmail                   	&kp LG(SPC) &kp LGUI  &trans &trans &kp RET
-		&trans &trans &trans &trans &trans    			                &trans &trans &trans &trans &trans
+		&sk LGUI &trans &trans &trans &trans    			            &trans &trans &trans &trans &trans
 					&mo KEYBOARD &trans &trans  					    &trans &trans &none
 		>;
 		};
