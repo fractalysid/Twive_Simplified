@@ -69,19 +69,24 @@
            };
 
            sysrq_emergency_reboot: sysrq_emergency_reboot {
-                label = "reboot_system_with_SysRq";
+                label = "reboot_linux_system_with_SysRq";
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
                 wait-ms = <500>;
                 tap-ms = <40>;
                 bindings
                      = <&macro_press &kp LALT>
-                     , <&macro_press &kp SYSREQ>
-                     , <&macro_tap &kp R &kp E &kp I &kp S &kp U &kp B>
+                     , <&macro_press &kp PRINTSCREEN>
+                     , <&kp R &kp E>
+                     , <&kp I>
+                     , <&kp S>
+                     , <&kp U>
+                     , <&kp B>
                      , <&macro_release &kp LALT>
-                     , <&macro_release &kp SYSREQ>
+                     , <&macro_release &kp PRINTSCREEN>
                      ;
            };
+
        };
 
     combos {
@@ -97,13 +102,11 @@
    };
 
     behaviors {
-        // TODO: posso modificare anche questo se noto che commetto errori
-        // aggiungere anche il positional hold tap e quindi farne 2
         hl_left: homerow_layers {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_LAYERS_LEFT";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <220>;
             quick_tap_ms = <80>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
@@ -114,7 +117,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_LAYERS_RIGHT";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <220>;
             quick_tap_ms = <80>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
@@ -158,14 +161,13 @@
     };
 
 // RIGHT NOW IT IS MEANT TO BE USED WITH THE ITALIAN QWERTY LAYOUT
-// MODIFIED FERRIS LAYOUT
+// BASED on the FERRIS layout by pierrechevalier83
 // https://github.com/qmk/qmk_firmware/tree/master/keyboards/ferris/keymaps/default
 
         keymap {
                 compatible = "zmk,keymap";
 
 //  DEFAULT-DH
-// TODO: quì posso addirittura aggiungere un &lt layer toggle sul pulsante del thumb cluster di sinistra
        		default_layer {
 		bindings = <
 		&kp Q &kp W &kp F &kp P &kp B 						                                            &kp J &kp L  &kp U    &kp Y   &kp BKSP
@@ -176,6 +178,7 @@
 		};
 
 // UTILITY LAYER, ALWAYS ACCESSIBLE
+// TODO: posso rimuovere sysrq che non serve così come è implementato
 		    utility_layer {
 		bindings = <
 		&kp ESC &none &caps_word &trans &trans            			    &kp INSERT &kp SYSREQ &kp PRINTSCREEN &trans &kp DEL
@@ -185,18 +188,17 @@
 		>;
 		};
 
-// COMMON LAYER with commonly accessed symbols like accents and shell
+// COMMON LAYER with commonly accessed symbols like accents on the left and shell symbols on the right
             common_layer {
 		bindings = <
-		&trans &none &kp IT_UGRV &kp IT_EACU &trans            			    &trans &kp IT_AND &kp IT_PIPE &kp IT_TILDE &trans
-		&kp IT_IGRV &kp IT_AGRV &kp IT_OGRV &kp IT_EGRV &trans              &trans &kp IT_FSLH &kp DOT &kp IT_MINUS &trans
+		&kp IT_CARET &kp IT_CEGR &kp IT_UGRV &kp IT_EACU &trans             &trans &kp IT_AND &kp IT_PIPE &kp IT_TILDE &trans
+		&kp IT_IGRV &kp IT_AGRV &kp IT_OGRV &kp IT_EGRV &trans              &trans &kp IT_FSLH &kp DOT &kp IT_MINUS &kp IT_UNDER
 		&trans &trans &trans &trans &trans    			                    &trans &kp IT_BSLH &kp IT_BKTK &kp IT_LESS &kp IT_GREAT
 					&none &trans &trans  					                &trans &trans &trans
 		>;
 		};
 
 // NAVIGATION LAYER
-// TODO: posso pensare di aggiungere direttamente 2 tasti per switchare tra i desktop virtali senza tenere premuti più tasti
 		    navigation_layer {
 		bindings = <
 		&kp HOME &kp PAGE_UP &kp PAGE_DOWN &kp END &trans            	        &trans &trans   &trans   &trans  &trans
@@ -207,8 +209,7 @@
 		};
 
 //  RIGHT SYMBOLS
-// IT_CARET si trova su IT_IGRV con lo shift di sinistra
-// manca IT_CEGR
+// TODO: capire come migliorare questo layer
        		rsymbols_layer {
 		bindings = <
 		&trans &trans &trans &trans &trans    	                        &kp IT_MINUS &kp IT_FSLH &kp IT_BSLH &kp IT_BKTK &trans
@@ -218,7 +219,8 @@
 		>;
 		};
 
-//  LEFT SYMBOLS (and accents)
+//  LEFT SYMBOLS
+// TODO: use this layers for programming related symbols
        		lsymbols_layer {
 		bindings = <
 		&kp IT_EXCL &kp IT_DQUOT &kp IT_AT &kp IT_HASH &kp IT_AND               	        &trans &trans &trans &trans &trans
