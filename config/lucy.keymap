@@ -149,6 +149,7 @@
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;    // <---[[left-hand keys]]
        };
 
+    // Questa in verità non la sto usando
     bm: bottomrow_mods {
             compatible = "zmk,behavior-hold-tap";
             label = "BOTTOMROW_MODS";
@@ -157,6 +158,18 @@
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+       };
+
+    // Il layer di sinistra è ad accesso rapido quindi voglio timings brevi. Posso permettermelo perché
+    // quando premo invio non sto per premere subito un altro tasto
+    llt: left_layer_toggle {
+            compatible = "zmk,behavior-hold-tap";
+            label = "LEFT_LAYER_TOGGLE";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <0>;
+            flavor = "balanced";
+            bindings = <&mo>, <&kp>;
        };
     };
 
@@ -173,7 +186,7 @@
 		&kp Q &kp W &kp F &kp P &kp B 						                                            &kp J &kp L  &kp U    &kp Y   &kp BKSP
 		&kp A &hl_left FUNCTIONS R &hl_left MEDIA S &hl_left RIGHT_SYMBOLS T &kp G 			            &kp M &hl_right LEFT_SYMBOLS N &hl_right NAVIGATION E &hl_right NUMBERS I &kp O
 		&lh_pht LSHFT Z &lh_pht LCTRL X &lh_pht LALT C &kp D &kp V				                        &kp K &kp H  &rh_pht LALT CMMA &rh_pht LCTRL DOT &rh_pht LSHFT IT_SQUOT
-          	                                    &lt COMMON RET &none &none  		                    &none &none &lt UTILITY SPC
+          	                                    &llt COMMON RET &none &none  		                    &none &none &lt UTILITY SPC
 		>;
 		};
 
@@ -191,10 +204,10 @@
 // COMMON LAYER with commonly accessed symbols like accents on the left and shell symbols on the right
             common_layer {
 		bindings = <
-		&kp IT_CARET &kp IT_CEGR &kp IT_UGRV &kp IT_EACU &trans             &trans &kp IT_AND &kp IT_PIPE &kp IT_TILDE &trans
-		&kp IT_IGRV &kp IT_AGRV &kp IT_OGRV &kp IT_EGRV &trans              &trans &kp IT_FSLH &kp DOT &kp IT_MINUS &kp IT_UNDER
-		&trans &trans &trans &trans &trans    			                    &trans &kp IT_BSLH &kp IT_BKTK &kp IT_LESS &kp IT_GREAT
-					&none &trans &trans  					                &trans &trans &trans
+		&kp IT_CARET &kp IT_CEGR &kp IT_UGRV &trans  &trans                     &kp IT_TILDE &kp IT_AND &kp IT_PIPE &kp IT_QUES &trans
+		&kp IT_IGRV &kp IT_AGRV &kp IT_OGRV &kp IT_EGRV &kp IT_EACU             &trans &kp IT_FSLH &kp DOT &kp IT_MINUS &kp IT_UNDER
+		&trans &trans &trans &trans &trans    			                        &trans &kp IT_BSLH &kp IT_BKTK &kp IT_LESS &kp IT_GREAT
+					&none &trans &trans  					                    &trans &trans &trans
 		>;
 		};
 
