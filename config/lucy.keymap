@@ -204,7 +204,7 @@
 // COMMON LAYER with commonly accessed symbols like accents on the left and shell symbols on the right
             common_layer {
 		bindings = <
-		&kp IT_CARET &kp IT_CEGR &kp IT_UGRV &trans  &trans                     &kp IT_TILDE &kp IT_AND &kp IT_PIPE &kp IT_QUES &trans
+		&kp IT_CARET &kp IT_CEGR &kp IT_UGRV &trans  &trans                     &kp IT_TILDE &kp IT_AND &kp IT_PIPE &kp IT_QUES &kp LC(BKSP)
 		&kp IT_IGRV &kp IT_AGRV &kp IT_OGRV &kp IT_EGRV &kp IT_EACU             &trans &kp IT_FSLH &kp DOT &kp IT_MINUS &kp IT_UNDER
 		&trans &trans &trans &trans &trans    			                        &trans &kp IT_BSLH &kp IT_BKTK &kp IT_LESS &kp IT_GREAT
 					&none &trans &trans  					                    &trans &trans &trans
