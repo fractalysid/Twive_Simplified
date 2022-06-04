@@ -162,7 +162,7 @@
 
     // Il layer di sinistra è ad accesso rapido quindi voglio timings brevi. Posso permettermelo perché
     // quando premo invio non sto per premere subito un altro tasto
-    llt: left_layer_toggle {
+    ltt: left_thumb_toggle {
             compatible = "zmk,behavior-hold-tap";
             label = "LEFT_LAYER_TOGGLE";
             #binding-cells = <2>;
@@ -186,7 +186,7 @@
 		&kp Q &kp W &kp F &kp P &kp B 						                                            &kp J &kp L  &kp U    &kp Y   &kp BKSP
 		&kp A &hl_left FUNCTIONS R &hl_left MEDIA S &hl_left RIGHT_SYMBOLS T &kp G 			            &kp M &hl_right LEFT_SYMBOLS N &hl_right NAVIGATION E &hl_right NUMBERS I &kp O
 		&m_left LSHFT Z &m_left LCTRL X &m_left LALT C &kp D &kp V				                        &kp K &kp H  &m_right LALT CMMA &m_right LCTRL DOT &m_right LSHFT IT_SQUOT
-          	                                    &llt COMMON RET &none &none  		                    &none &none &lt UTILITY SPC
+          	                                    &ltt COMMON RET &none &none  		                    &none &none &lt UTILITY SPC
 		>;
 		};
 
