@@ -102,7 +102,7 @@
    };
 
     behaviors {
-        hl_left: homerow_layers {
+        hl_left: homerow_layers_left {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_LAYERS_LEFT";
             #binding-cells = <2>;
@@ -113,7 +113,7 @@
             hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>;    // <---[[right-hand keys]]
         };
 
-        hl_right: homerow_layers {
+        hl_right: homerow_layers_right {
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_LAYERS_RIGHT";
             #binding-cells = <2>;
@@ -125,9 +125,9 @@
 
         };
 
-    lh_pht: left_hand_positional_hold_tap {
+        m_left: mods_left {
             compatible = "zmk,behavior-hold-tap";
-            label = "LEFT_POSITIONAL_HOLD_TAP";
+            label = "MODS_LEFT";
             #binding-cells = <2>;
             //flavor = "tap-unless-interrupted";
             flavor = "tap-preferred";
@@ -137,9 +137,9 @@
             hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>;    // <---[[right-hand keys]]
         };
 
-    rh_pht: right_hand_positional_hold_tap {
+        m_right: right_mods {
             compatible = "zmk,behavior-hold-tap";
-            label = "RIGHT_POSITIONAL_HOLD_TAP";
+            label = "MODS_RIGHT";
             #binding-cells = <2>;
             //flavor = "tap-unless-interrupted";
             flavor = "tap-preferred";
@@ -185,7 +185,7 @@
 		bindings = <
 		&kp Q &kp W &kp F &kp P &kp B 						                                            &kp J &kp L  &kp U    &kp Y   &kp BKSP
 		&kp A &hl_left FUNCTIONS R &hl_left MEDIA S &hl_left RIGHT_SYMBOLS T &kp G 			            &kp M &hl_right LEFT_SYMBOLS N &hl_right NAVIGATION E &hl_right NUMBERS I &kp O
-		&lh_pht LSHFT Z &lh_pht LCTRL X &lh_pht LALT C &kp D &kp V				                        &kp K &kp H  &rh_pht LALT CMMA &rh_pht LCTRL DOT &rh_pht LSHFT IT_SQUOT
+		&m_left LSHFT Z &m_left LCTRL X &m_left LALT C &kp D &kp V				                        &kp K &kp H  &m_right LALT CMMA &m_right LCTRL DOT &m_right LSHFT IT_SQUOT
           	                                    &llt COMMON RET &none &none  		                    &none &none &lt UTILITY SPC
 		>;
 		};
