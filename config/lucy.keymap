@@ -104,6 +104,8 @@
     behaviors {
 
         // Behaviors for home row layers toggle
+        // with 220 on tapping-term I often pressed RA too slowly and it triggered the hold on R
+        // I could also change the term only on the left side as this was not an issue on right side
 
         hl_left: homerow_layers_left {
             compatible = "zmk,behavior-hold-tap";
@@ -154,19 +156,8 @@
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;    // <---[[left-hand keys]]
        };
 
-    // Questa in verità non la sto usando
-    bm: bottomrow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "BOTTOMROW_MODS";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick-tap-ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-       };
-
-    // Il layer di sinistra è ad accesso rapido quindi voglio timings brevi. Posso permettermelo perché
-    // quando premo invio non sto per premere subito un altro tasto
+    // Layer on left thumb is for quick access to symbols used while typing so I need a shorter window for triggering
+    // the hold behavior. This is possible as RETURN is not used in the middle of a something. Balanced behavior is perfect here
     ltt: left_thumb_toggle {
             compatible = "zmk,behavior-hold-tap";
             label = "LEFT_LAYER_TOGGLE";
