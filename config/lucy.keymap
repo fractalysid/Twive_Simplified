@@ -93,10 +93,10 @@
         compatible = "zmk,combos";
 
         // Get back to default layer
-        escape_qwerty {
+        combo_escape_qwerty {
             timeout-ms = <50>;
             layers= <QWERTY>;
-            key-positions = <0 18>;
+            key-positions = <30 35>;
             bindings = <&to DEFAULT>;
         };
    };
