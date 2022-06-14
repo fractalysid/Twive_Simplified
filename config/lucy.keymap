@@ -188,10 +188,13 @@
 
 // UTILITY LAYER, ALWAYS ACCESSIBLE
 // TODO: posso rimuovere sysrq che non serve così come è implementato
+// TODO: posso usare questo layer per aggiungere macro ma posso anche pensare di aggiungere qualcuso sulla home row
+// del lato destro
+// Non so perché ma  &kp K_COPY &kp K_PASTE &kp K_CUT non funzionano
 		    utility_layer {
 		bindings = <
 		&kp ESC &none &caps_word &trans &trans            			    &kp INSERT &kp SYSREQ &kp PRINTSCREEN &trans &kp DEL
-		&kp TAB &sk LALT &sk LCTRL &sk LSHIFT &gmail                   	&kp LG(SPC) &kp LGUI  &trans &trans &kp RET
+		&kp TAB &sk LALT &sk LCTRL &sk LSHIFT &gmail                   	&kp LG(SPC) &kp LGUI  &kp LC(C) &kp LC(V) &kp LC(X)
 		&sk LGUI &trans &trans &trans &trans    			            &trans &trans &trans &trans &trans
 					&mo KEYBOARD &trans &trans  					    &trans &trans &none
 		>;
