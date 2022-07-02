@@ -92,7 +92,7 @@
     combos {
         compatible = "zmk,combos";
 
-        // Get back to default layer
+        // Get back to default layer by pressing both thumb keys
         combo_escape_qwerty {
             timeout-ms = <50>;
             layers= <QWERTY>;
