@@ -7,6 +7,8 @@ I present to you: Two-Five!
 But, 'why this strange name?' you may ask.
 Well, because 2^5 keys, 2*5 layers ~~and LSD-25~~ is all you will ever need.
 
+The basic ideas are set but I keep changing everything based on my use feedback.
+
 ## Design principles:
 
 - 32 keys (2^5) with only 1 key on the thumb cluster
@@ -45,8 +47,10 @@ There are 10 layers:
 
 Layers in the home row are placed in order to have the most used ones in the inner
 and outer fingers balanced between left and right half ( not considering pinkies in this case).
-This is in order to balance usage of the hands and minimize confusion when in need of quickly
-switching between layers (eg: round parentheses and navigation to move inside )
+The reason behind not using the middle column for the frequently used layers is
+because by using the outer/inner column we leave two consecutive fingers free to press
+others keys comfortably which is not the case for the middle finger.
+
 
 |  NUMBERS  |  MEDIA   | RSYMBOLS  |       | LSYMBOLS  | FUNCTIONS | NAVIGATION |
 |:---------:|:--------:|:---------:|:-----:|:---------:|:---------:|:----------:|
@@ -98,6 +102,8 @@ zmk repository.
 Common parentheses in home row. Brackets and angular in top row. Other common
 programming symbols in bottom row.
 Bottom row for rare symbols.
+'(){' becomes a matter of rolling the keys from inner to outer column. It couldn't be
+easier.
 
 ## Left symbols
 Common symbols in home row. Math symbols in top row.

@@ -122,7 +122,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_LAYERS_LEFT";
             #binding-cells = <2>;
-            tapping-term-ms = <250>;    // 200
+            tapping-term-ms = <200>;    // 250
             quick_tap_ms = <80>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
@@ -133,7 +133,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "HOMEROW_LAYERS_RIGHT";
             #binding-cells = <2>;
-            tapping-term-ms = <250>;    //200
+            tapping-term-ms = <200>;    //250
             quick_tap_ms = <80>;
             flavor = "tap-preferred";
             bindings = <&mo>, <&kp>;
@@ -149,7 +149,7 @@
             #binding-cells = <2>;
             //flavor = "tap-unless-interrupted";
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;    // 180
+            tapping-term-ms = <175>;    // 200
             quick-tap-ms = <125>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>;    // <---[[right-hand keys]]
@@ -161,7 +161,7 @@
             #binding-cells = <2>;
             //flavor = "tap-unless-interrupted";
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;    // 180
+            tapping-term-ms = <175>;    // 200
             quick-tap-ms = <125>;
             bindings = <&kp>, <&kp>;
             hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;    // <---[[left-hand keys]]
@@ -173,7 +173,7 @@
             compatible = "zmk,behavior-hold-tap";
             label = "LEFT_LAYER_TOGGLE";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;    // 135
+            tapping-term-ms = <135>;    // 150
             quick-tap-ms = <0>;
             flavor = "balanced";
             bindings = <&mo>, <&kp>;
