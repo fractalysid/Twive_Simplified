@@ -223,9 +223,9 @@
 // NAVIGATION LAYER
 		    navigation_layer {
 		bindings = <
-		&kp HOME &kp PAGE_UP &kp PAGE_DOWN &kp END &kp LC(LS(TAB))                      &trans &kp LC(LA(UP))   &trans   &trans  &trans
+		&kp HOME &kp PAGE_UP &kp PAGE_DOWN &kp END &kp LC(LS(TAB))                      &trans &kp LC(LA(LEFT))   &trans   &trans  &trans
 		&kp LEFT &kp UP &kp DOWN &kp RIGHT &kp LC(TAB)		                            &trans &kp LGUI  &kp LC(LSHIFT) &none &kp LCTRL
-		&kp K_FORWARD  &kp LC(LA(LEFT)) &kp LC(LA(RIGHT)) &kp LA(TAB) &kp K_BACK   		&trans &kp LC(LA(DOWN))  &trans  &trans &trans
+		&kp K_FORWARD  &kp LC(LA(UP)) &kp LC(LA(DOWN)) &kp LA(TAB) &kp K_BACK   		&trans &kp LC(LA(RIGHT))  &trans  &trans &trans
 					                &trans &trans &trans  			                    &trans &trans &trans
 		>;
 		};
@@ -234,7 +234,7 @@
             rsymbols_layer {
 		bindings = <
 		&trans &trans &trans &trans &trans    	                        &trans &kp IT_LBKT &kp IT_RBKT &trans &trans
-    	&trans &trans &trans &none &trans                               &trans &kp IT_RPAR &kp IT_LPAR &kp IT_LBRC &kp IT_RBRC
+    	&trans &trans &trans &none &trans                               &trans &kp IT_LPAR &kp IT_RPAR &kp IT_LBRC &kp IT_RBRC
 		&trans &trans &trans &trans &trans	                            &trans &kp IT_LESS &kp IT_GREAT &kp IT_VIRGOLETTE_L  &kp IT_VIRGOLETTE_R
 					 &trans  &trans &trans                  			&trans &trans &trans
 		>;
@@ -254,10 +254,10 @@
 // Access to &sysrq_emergency_reboot is intentionally cumbersome to avoid pressing it by mistake
 		    functions_layer {
 		bindings = <
-		&trans &kp F7 &kp F8 &kp F9 &kp F10                                     &trans &trans &trans &trans &trans
-        &trans &kp F4 &kp F5 &kp F6 &kp F11                                     &sysrq_emergency_reboot &kp LA(LCTL) &none &trans &trans
-        &trans &kp F1 &kp F2 &kp F3 &kp F12                                     &trans &trans &trans &trans &trans
-                        &trans &trans &trans
+		&kp F10 &kp F7 &kp F8 &kp F9 &trans                                     &trans &trans &trans &trans &trans
+        &kp F11 &kp F4 &kp F5 &kp F6 &trans                                     &sysrq_emergency_reboot &kp LA(LCTL) &none &trans &trans
+        &kp F12 &kp F1 &kp F2 &kp F3 &trans                                     &trans &trans &trans &trans &trans
+                       &trans &trans &trans
 		>;
 		};	
 // NUMBERS KEYS
