@@ -224,7 +224,7 @@
 // TODO: capire come migliorare questo layer
        		rsymbols_layer {
 		bindings = <
-		&trans &trans &trans &trans &trans    	                        &trans &kp IT_GRAD &kp IT_CARET &kp IT_EQL &trans
+		&trans &trans &trans &trans &trans    	                        &trans &kp IT_DEGREE &kp IT_CARET &kp IT_EQL &trans
 		&trans &trans &trans &none &trans                               &kp IT_PLUS &kp IT_AT &kp IT_HASH &kp IT_PERC &kp IT_UNDER
 		&trans &trans &trans &trans &trans	                            &kp IT_PND &kp IT_EUR &kp IT_USD &kp IT_UGRV  &kp  IT_IGRV
 					                &trans  &trans &trans    			&trans &trans &trans
