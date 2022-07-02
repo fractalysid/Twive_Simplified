@@ -1,8 +1,16 @@
-# To-Be-Named-Yet Layout
+# Two-Five Layout
 Inspired by pierrechevalier83 [layout](https://github.com/qmk/qmk_firmware/tree/master/keyboards/ferris/keymaps/default) for ferris.
 
 This will have it's own repository one day.
 
+I present to you: Two-Five!
+But, 'why this strange name?' you may ask.
+Well, because 2^5 keys, 2*5 layers ~~and LSD-25~~ is all you will ever need.
+
+## Design principles:
+
+- 32 keys (2^5) with only 1 key on the thumb cluster
+- 10 layouts (2*5)
 - Colemak-DH as base layer
 - Space on right thumb, Return on left one
 - Apostrophe on bottom pinky. Very common in italian language. Swap with another common symbol or letter
@@ -14,12 +22,13 @@ This will have it's own repository one day.
 - "Utility" layer on right thumb for TAB, ESC, GUI, sticky modifiers and so on
 - No use of SHIFT for symbols
 - No use of combos (almost)
+- Prefer more layers and avoid using keys in difficult positions (a few exceptions exist where I preferred keeping the standard position)
 
-More details:
-- Home row layer toggle: Positional hold-tap, "tap-preferred" with 250ms tapping term. 220 should be feasible for most
+### Details about layers and modifiers triggering
+- Home row layer toggle: Positional hold-tap, "tap-preferred" with 250ms tapping term. This can probably be lowered for most
 - Bottom row modifier: Positional hold-tap, "tap-preferred" with 200ms tapping term
 - Common layer: default layer-toggle timings
-- Utility layer: Balanced with only 150ms tapping term for quick access while typing text
+- Utility layer: "Balanced" with only 150ms tapping term for quick access while typing text. 135ms should be feasible
 
 # Layers
 There are 10 layers:
@@ -35,7 +44,7 @@ There are 10 layers:
 - QWERTY
 
 Layers in the home row are placed in order to have the most used ones in the inner
-and outer fingers balanced between left and right ( not considering pinkies in this case).
+and outer fingers balanced between left and right half ( not considering pinkies in this case).
 This is in order to balance usage of the hands and minimize confusion when in need of quickly
 switching between layers (eg: round parentheses and navigation to move inside )
 
@@ -91,15 +100,15 @@ programming symbols in bottom row.
 Bottom row for rare symbols.
 
 ## Left symbols
-Common symbols in home row. Math symbols in home row.
+Common symbols in home row. Math symbols in top row.
 Bottom row for rare symbols.
 
 ## Function
 F1-F12. Other special functions may be added.
+Ctrl+Alt for convenient access to terminal consoles in GNU/Linux.
 
 ## Numbers
-Rolling hands from outer to inner side is more comfortable. Moreover 0123 are
-more common than other numbers. Keys are placed keeping these things in mind.
+0123 are more common than other numbers so they are in the home row.
 Dot and comma and a couple of math operators are also present.
 
 ## Media
@@ -108,12 +117,13 @@ Volume top left. Brightness top right.
 Free bottom row.
 
 ## Keyboard
-This is accessed Functions related to keyboard. Reset, bootloader mode, bluetooth profile management,
-RGBs and so on.
+This is to access functions related to keyboard. Reset, bootloader mode, bluetooth
+profile management, usb over ble preference, RGBs and so on.
 
 From here you can also activate the QWERTY layer.
 
 ## Qwerty
 QWERTY layer with backspace in the right home pinky.
+RET and SPC are swapped as SPACE is used in videogames.
 
 Press both thumb keys to get back to BASE layer.
