@@ -101,6 +101,14 @@
         };
    };
 
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_keyboard_layer {
+            if-layers = <1 2>;
+            then-layer = <9>;
+        };
+    };
+
     behaviors {
 
         // Behaviors for home row layers toggle
@@ -181,7 +189,7 @@
 		bindings = <
 		&kp Q &kp W &kp F &kp P &kp B 						                                            &kp J &kp L  &kp U    &kp Y   &kp BKSP
 		&kp A &hl_left FUNCTIONS R &hl_left MEDIA S &hl_left RIGHT_SYMBOLS T &kp G 			            &kp M &hl_right LEFT_SYMBOLS N &hl_right NAVIGATION E &hl_right NUMBERS I &kp O
-		&m_left LSHFT Z &m_left LCTRL X &m_left LALT C &kp D &kp V				                        &kp K &kp H  &m_right LALT CMMA &m_right LCTRL DOT &m_right LSHFT IT_SQUOT
+		&m_left LSHFT Z &m_left LCTRL X &m_left LALT C &m_left LGUI D &kp V		                        &kp K &m_right LGUI H  &m_right LALT CMMA &m_right LCTRL DOT &m_right LSHFT IT_SQUOT
           	                                    &ltt COMMON RET &none &none  		                    &none &none &lt UTILITY SPC
 		>;
 		};
@@ -196,14 +204,14 @@
 		&kp ESC &none &caps_word &trans &trans            			    &kp INSERT &kp SYSREQ &kp PRINTSCREEN &trans &kp DEL
 		&kp TAB &sk LALT &sk LCTRL &sk LSHIFT &gmail                   	&kp LG(SPC) &kp LGUI  &kp LC(C) &kp LC(V) &kp LC(X)
 		&sk LGUI &trans &trans &trans &trans    			            &trans &trans &trans &trans &trans
-					&mo KEYBOARD &trans &trans  					    &trans &trans &none
+					&trans &trans &trans  					    &trans &trans &none
 		>;
 		};
 
 // COMMON LAYER with commonly accessed symbols like accents on the left and shell symbols on the right
             common_layer {
 		bindings = <
-		&kp IT_CARET &kp IT_CEGR &kp IT_UGRV &trans  &trans                     &trans &kp IT_AND &kp IT_PIPE &kp IT_QUES &kp LC(BKSP)
+		&kp IT_EXCL &kp IT_CEGR &kp IT_UGRV &trans  &trans                      &trans &kp IT_AND &kp IT_PIPE &kp IT_QUES &kp LC(BKSP)
 		&kp IT_IGRV &kp IT_AGRV &kp IT_OGRV &kp IT_EGRV &kp IT_EACU             &kp IT_USD &kp IT_FSLH &kp DOT &kp IT_MINUS &kp IT_UNDER
 		&trans &trans &trans &trans &trans    			                        &kp IT_TILDE &kp IT_BSLH &kp IT_BKTK &kp IT_LESS &kp IT_GREAT
 					&none &trans &trans  					                    &trans &trans &trans
@@ -213,7 +221,7 @@
 // NAVIGATION LAYER
 		    navigation_layer {
 		bindings = <
-		&kp HOME &kp PAGE_UP &kp PAGE_DOWN &kp END &kp LC(LS(TAB))                      &trans &trans   &trans   &trans  &trans
+		&kp HOME &kp PAGE_UP &kp PAGE_DOWN &kp END &kp LC(LS(TAB))                      &kp K_FORWARD &kp K_BACK   &trans   &trans  &trans
 		&kp LEFT &kp UP &kp DOWN &kp RIGHT &kp LC(TAB)		                            &trans &kp LGUI  &none &kp LC(LSHIFT) &kp LCTRL
 		&kp K_FORWARD  &kp LC(LA(UP)) &kp LC(LA(DOWN)) &kp LA(TAB) &kp K_BACK   		&trans &trans  &trans  &trans &trans
 					                &trans &trans &trans  			                    &trans &trans &trans
@@ -225,8 +233,12 @@
        		rsymbols_layer {
 		bindings = <
 		&trans &trans &trans &trans &trans    	                        &trans &kp IT_DEGREE &kp IT_CARET &kp IT_EQL &trans
+
 		&trans &trans &trans &none &trans                               &kp IT_PLUS &kp IT_AT &kp IT_HASH &kp IT_PERC &kp IT_UNDER
+    	&trans &trans &trans &none &trans                               &kp IT_PLUS &kp IT_RPAR &kp IT_LPAR &kp IT_LBRC &kp IT_RBRC
+
 		&trans &trans &trans &trans &trans	                            &kp IT_PND &kp IT_EUR &kp IT_USD &kp IT_UGRV  &kp  IT_IGRV
+
 					                &trans  &trans &trans    			&trans &trans &trans
 		>;
 		};
@@ -265,9 +277,9 @@
 // MEDIA LAYER
 		    media_layer {
 		bindings = <
-		&trans  &trans &none &trans &trans 			                            &trans &kp K_VOLUME_DOWN   &kp K_VOLUME_UP   &kp K_MUTE  &trans
+		&trans  &trans &none &trans &trans 			                            &kp K_MUTE &kp K_VOLUME_DOWN   &kp K_VOLUME_UP   &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC
 		&trans  &trans &none &trans &trans  			                        &trans &kp K_PLAY_PAUSE  &kp K_PREV &kp K_NEXT &kp K_STOP2
-		&trans  &trans &trans &trans &trans   			                        &trans &kp C_BRIGHTNESS_DEC &kp C_BRIGHTNESS_INC &trans &trans
+		&trans  &trans &trans &trans &trans   			                        &trans &trans &trans &trans &trans
 				            	&trans &trans &trans  					        &trans &trans &trans
 		>;
 		};
