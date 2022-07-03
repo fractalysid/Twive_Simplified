@@ -1,7 +1,7 @@
 # Two-Five Layout
 Inspired by pierrechevalier83 [layout](https://github.com/qmk/qmk_firmware/tree/master/keyboards/ferris/keymaps/default) for ferris.
 
-Graphic inspired by [Duccio](https://github.com/duckyb/zmk-sweep), thanks!
+Graphic made with draw.io, inspired by [Duccio](https://github.com/duckyb/zmk-sweep), thanks!
 
 I present to you: Two-Five!
 But, 'why such a strange name?' you may ask.
@@ -19,8 +19,8 @@ The basic ideas are set but I keep changing everything based on my use feedback.
 - Backspace always accessible from top pinky
 - Modifiers on bottom row, mirrored. From left to right: SHIFT, CTRL, ALT, GUI
 - Layers on home row
-- "Utility" layer on right thumb for keys like GUI, TAB, ESC, sticky modifiers and more
-- "Common" layer on left thumb for common letters and symbols used in various languages. Useful for accented letters and other language specific symbols. Also useful for commonly used symbols (I'm currently using it for bash symbols)
+- "Utility" layer on right thumb for keys like GUI, TAB, ESC, sticky modifiers, macros and more
+- "Common" layer on left thumb for common letters and symbols used in various languages. Useful for accented letters, other language specific symbols and commonly used symbols (I'm currently using it for bash symbols)
 - "Utility" layer on right thumb for TAB, ESC, GUI, sticky modifiers and so on
 - No use of SHIFT for symbols
 - No use of combos (almost)
