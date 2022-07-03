@@ -233,7 +233,7 @@
 // RIGHT SYMBOLS
             rsymbols_layer {
 		bindings = <
-		&trans &trans &trans &trans &trans    	                        &trans &kp IT_LBKT &kp IT_RBKT &trans &trans
+		&trans &trans &trans &trans &trans    	                        &trans &kp IT_LBKT &kp IT_RBKT &kp IT_CARET &trans
     	&trans &trans &trans &none &trans                               &trans &kp IT_LPAR &kp IT_RPAR &kp IT_LBRC &kp IT_RBRC
 		&trans &trans &trans &trans &trans	                            &trans &kp IT_LESS &kp IT_GREAT &kp IT_VIRGOLETTE_L  &kp IT_VIRGOLETTE_R
 					 &trans  &trans &trans                  			&trans &trans &trans
