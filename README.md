@@ -37,7 +37,7 @@ I couldn't manage to make the github action workflow work so it must be manually
 - Bottom row modifier: Positional hold-tap, "tap-preferred" with 175ms tapping term
 - Utility layer: default layer-toggle timings
 - Common layer: "Balanced" with only 135ms tapping term for quick access while typing text
-- Common layer: "Balanced" with only 135ms tapping term for quick access while typing text
+
 
 # Layers
 There are 10 layers:
