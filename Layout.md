@@ -1,10 +1,10 @@
 # Two-Five Layout
 Inspired by pierrechevalier83 [layout](https://github.com/qmk/qmk_firmware/tree/master/keyboards/ferris/keymaps/default) for ferris.
 
-This will have it's own repository one day.
+Graphic inspired by [Duccio](https://github.com/duckyb/zmk-sweep), thanks!
 
 I present to you: Two-Five!
-But, 'why this strange name?' you may ask.
+But, 'why such a strange name?' you may ask.
 Well, because 2^5 keys, 2*5 layers ~~and LSD-25~~ is all you will ever need.
 
 The basic ideas are set but I keep changing everything based on my use feedback.
@@ -25,6 +25,8 @@ The basic ideas are set but I keep changing everything based on my use feedback.
 - No use of SHIFT for symbols
 - No use of combos (almost)
 - Prefer more layers and avoid using keys in difficult positions (a few exceptions exist where I preferred keeping the standard position)
+- An extra QWERTY layer in case someone else needs to use your keyboard or you want to game with it
+- "Ok wait! you lied! we've got 11 layers!". I did not, Qwerty does not count, it makes no sense and it's not even worth to call it a "layout". We could remove it and noone wille ever notice.
 
 ### Details about layers and modifiers triggering
 - Home row layer toggle: Positional hold-tap, "tap-preferred" with 250ms tapping term. This can probably be lowered for most
