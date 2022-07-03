@@ -29,7 +29,7 @@ I couldn't manage to make the github action workflow work.
 - No use of combos (almost)
 - Prefer more layers and avoid using keys in difficult positions (a few exceptions exist where I preferred keeping the standard position)
 - An extra QWERTY layer in case someone else needs to use your keyboard or you want to game with it
-- "Ok wait! you lied! we've got 11 layers!". I did not, Qwerty does not count, it makes no sense and it's not even worth to call it a "layout". We could remove it and noone will ever notice.
+- "Ok wait! you lied! we've got 11 layers!". I did not, Qwerty does not count as it is an extra layer for extremely rare use cases
 
 ### Details about layers and modifiers triggering
 - Home row layer toggle: Positional hold-tap, "tap-preferred" with 200ms tapping term. This can probably be lowered for most
