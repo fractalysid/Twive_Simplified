@@ -203,7 +203,7 @@
 // Non so perché ma  &kp K_COPY &kp K_PASTE &kp K_CUT non funzionano
 		    utility_layer {
 		bindings = <
-		&kp ESC &none &caps_word &trans &trans            			    &kp INSERT &kp LC(Z) &kp LC(LS(Z)) &kp PRINTSCREEN &kp DEL
+		&kp ESC &trans &caps_word &trans &trans            			    &kp INSERT &kp LC(Z) &kp LC(LS(Z)) &kp PRINTSCREEN &kp DEL
 		&kp TAB &sk LALT &sk LCTRL &sk LSHIFT &gmail                   	&kp LG(SPC) &kp LGUI  &kp LC(C) &kp LC(V) &kp LC(X)
 		&sk LGUI &trans &trans &trans &trans    			            &trans &trans &trans &trans &trans
 					    &trans &trans &trans  					        &trans &trans &none
@@ -273,7 +273,7 @@
 // MEDIA LAYER
 		    media_layer {
 		bindings = <
-		&trans  &trans &none &trans &trans 			                            &kp K_MUTE &kp K_VOLUME_DOWN   &kp K_VOLUME_UP   &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC
+		&trans  &trans &trans &trans &trans 		                            &kp K_MUTE &kp K_VOLUME_DOWN   &kp K_VOLUME_UP   &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC
 		&trans  &trans &none &trans &trans  			                        &trans &kp K_PLAY_PAUSE  &kp K_PREV &kp K_NEXT &kp K_STOP2
 		&trans  &trans &trans &trans &trans   			                        &trans &trans &trans &trans &trans
 				            	&trans &trans &trans  					        &trans &trans &trans
@@ -287,7 +287,7 @@
 		bindings = <
 		&reset  &bootloader &none &none &out OUT_USB 			        &out OUT_BLE &none   &none   &bootloader  &reset
 		&none &none &bt BT_PRV &bt BT_NXT &bt BT_CLR  			        &to QWERTY &bt BT_SEL 0  &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
-		&none  &none &none &none &bt BT_CLR   				            &trans &trans &trans &trans &trans
+		&none  &none &none &none &bt BT_CLR   				            &none &none &none &none &none
 				            	&trans &trans &trans  					&trans &trans &trans
 		>;
 		};
@@ -297,7 +297,7 @@
 		bindings = <
 		&kp Q &kp W &kp E &kp R  &kp T 						&kp Y &kp U  &kp I &kp O &kp P
 		&kp A &kp S &kp D &kp F &kp G 			        	&kp H &kp J &kp K &kp L &kp BKSP
-		&kp Z &kp X &kp C &kp V &kp B				        &kp K &kp H  &kp CMMA &kp DOT &mt LSHFT IT_MINUS
+		&kp Z &kp X &kp C &kp V &kp B				        &kp M &kp N &kp CMMA &kp DOT &mt LSHFT IT_MINUS
           				&kp SPC &none &none   		        &none &none &kp RET
 		>;
 		};
