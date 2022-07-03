@@ -9,7 +9,7 @@ Well, because 2^5 keys, 2*5 layers ~~and LSD-25~~ is all you will ever need.
 
 The basic ideas are set but I keep changing everything based on my use feedback.
 
- ZMK config files for the [Lucy](https://github.com/fractalysid/Lucy-Keyboard) v0.2 keyboard.
+ZMK config files for the [Lucy](https://github.com/fractalysid/Lucy-Keyboard) v0.2 keyboard.
 I couldn't manage to make the github action workflow work.
 
 ## Design principles:
@@ -29,13 +29,13 @@ I couldn't manage to make the github action workflow work.
 - No use of combos (almost)
 - Prefer more layers and avoid using keys in difficult positions (a few exceptions exist where I preferred keeping the standard position)
 - An extra QWERTY layer in case someone else needs to use your keyboard or you want to game with it
-- "Ok wait! you lied! we've got 11 layers!". I did not, Qwerty does not count, it makes no sense and it's not even worth to call it a "layout". We could remove it and noone wille ever notice.
+- "Ok wait! you lied! we've got 11 layers!". I did not, Qwerty does not count, it makes no sense and it's not even worth to call it a "layout". We could remove it and noone will ever notice.
 
 ### Details about layers and modifiers triggering
-- Home row layer toggle: Positional hold-tap, "tap-preferred" with 250ms tapping term. This can probably be lowered for most
-- Bottom row modifier: Positional hold-tap, "tap-preferred" with 200ms tapping term
+- Home row layer toggle: Positional hold-tap, "tap-preferred" with 200ms tapping term. This can probably be lowered for most
+- Bottom row modifier: Positional hold-tap, "tap-preferred" with 175ms tapping term
 - Common layer: default layer-toggle timings
-- Utility layer: "Balanced" with only 150ms tapping term for quick access while typing text. 135ms should be feasible
+- Utility layer: "Balanced" with only 135ms tapping term for quick access while typing text
 
 # Layers
 There are 10 layers:
@@ -68,22 +68,21 @@ in the italian language. Replace it with a commonly used symbol of your liking.
 In the top pinky we find the "backspace" which is always accessible from every layer
 except the UTILITY layer, which replaces it with "delete" and the COMMON layer, which
 sends CTRL+backspace in order to delete entire words.
-It is also not accessible from the KEYBOARD and QWERTY layouts.
 
 ## Utility
 This layer is for utility. We have LGUI in the home index finger. TAB and ESC are
-placed similar to a standard keyboard but using the home row or just the left index
-finger is a good idea.
+placed similar to a standard keyboard but it would be a good idea to place them
+in the index finger column.
 This layer can be thought as the layer in which to place all the utility keys, like
 return, esc, backspace, delete... and even remove them from the base layer and thumb
 cluster.
 Here we can also place other utility keys like PRINTSCREEN, INSERT and so on.
-I'm experimenting with copy-cut-paste in the right home row right now. Comfortable
-but could be better.
+I'm experimenting with copy-cut-paste in the right home row right now and undo-redo
+in the top row. Comfortable but could be better.
 In the left home row you can find sticky modifiers. I found very comfortable to
 use sticky modifiers in this layer for actions like "save" (Ctrl + S), "quit" (Ctrl + Q),
-"open terminal" (Ctrl + Alt + T), by pressing keys in sequence and avoid the use
-of combos.
+"find" (Ctrl + f), "open terminal" (Ctrl + Alt + T), by pressing keys in sequenceand
+avoid the use of combos.
 Also present is the caps-word feature, which I found extremely useful.
 
 ## Common
