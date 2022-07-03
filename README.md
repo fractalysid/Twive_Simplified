@@ -4,13 +4,14 @@ Inspired by pierrechevalier83 [layout](https://github.com/qmk/qmk_firmware/tree/
 Graphic made with draw.io, inspired by [Duccio](https://github.com/duckyb/zmk-sweep), thanks!
 
 I present to you: Two-Five!
+
 But, 'why such a strange name?' you may ask.
 Well, because 2^5 keys, 2*5 layers ~~and LSD-25~~ is all you will ever need.
 
 The basic ideas are set but I keep changing everything based on my use feedback.
 
 ZMK config files for the [Lucy](https://github.com/fractalysid/Lucy-Keyboard) v0.2 keyboard.
-I couldn't manage to make the github action workflow work.
+I couldn't manage to make the github action workflow work so it must be manually compiled.
 
 ## Design principles:
 
