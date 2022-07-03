@@ -46,9 +46,10 @@ There are 10 layers:
 - LEFT SYMBOLS
 - FUNCTIONS
 - NUMBERS
+- NAVIGATION
 - MEDIA
 - KEYBOARD
-- QWERTY
+- ~~QWERTY~~
 
 Layers in the home row are placed in order to have the most used ones in the inner
 and outer fingers balanced between left and right half ( not considering pinkies in this case).
