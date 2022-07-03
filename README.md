@@ -33,10 +33,11 @@ I couldn't manage to make the github action workflow work so it must be manually
 - "Ok wait! you lied! we've got 11 layers!". I did not, Qwerty does not count as it is an extra layer for extremely rare use cases
 
 ### Details about layers and modifiers triggering
-- Home row layer toggle: Positional hold-tap, "tap-preferred" with 200ms tapping term. This can probably be lowered for most
+- Home row layer toggle: Positional hold-tap, "tap-preferred" with 200ms tapping term
 - Bottom row modifier: Positional hold-tap, "tap-preferred" with 175ms tapping term
-- Common layer: default layer-toggle timings
-- Utility layer: "Balanced" with only 135ms tapping term for quick access while typing text
+- Utility layer: default layer-toggle timings
+- Common layer: "Balanced" with only 135ms tapping term for quick access while typing text
+- Common layer: "Balanced" with only 135ms tapping term for quick access while typing text
 
 # Layers
 There are 10 layers:
