@@ -9,6 +9,9 @@ Well, because 2^5 keys, 2*5 layers ~~and LSD-25~~ is all you will ever need.
 
 The basic ideas are set but I keep changing everything based on my use feedback.
 
+ ZMK config files for the [Lucy](https://github.com/fractalysid/Lucy-Keyboard) v0.2 keyboard.
+I couldn't manage to make the github action workflow work.
+
 ## Design principles:
 
 - 32 keys (2^5) with only 1 key on the thumb cluster
@@ -135,3 +138,5 @@ QWERTY layer with backspace in the right home pinky.
 RET and SPC are swapped as SPACE is used in videogames.
 
 Press both thumb keys to get back to BASE layer.
+
+![TwoFive Layout](https://github.com/fractalysid/TwoFive-Layout/blob/symbols_rework/TwoFive.png?raw=true)
