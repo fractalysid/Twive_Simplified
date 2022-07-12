@@ -1,11 +1,11 @@
-# Two-Five Layout
+# Twive Layout
 Inspired by pierrechevalier83 [layout](https://github.com/qmk/qmk_firmware/tree/master/keyboards/ferris/keymaps/default) for ferris.
 
-Graphic made with draw.io, inspired by [Duccio](https://github.com/duckyb/zmk-sweep), thanks!
+Graphic made with draw.io, thanks [Duccio](https://github.com/duckyb/zmk-sweep) for the idea!
 
-I present to you: Two-Five!
+I present to you: Twive!
 
-But, 'why such a strange name?' you may ask.
+The name comes from the contraption of Two and Five. Why this name?
 Well, because 2^5 keys, 2*5 layers ~~and LSD-25~~ is all you will ever need.
 
 The basic ideas are set but I keep changing everything based on my use feedback.
@@ -38,6 +38,10 @@ I couldn't manage to make the github action workflow work so it must be manually
 - Utility layer: default layer-toggle timings
 - Common layer: "Balanced" with only 135ms tapping term for quick access while typing text
 
+The idea behind the two thumb cluster keys is that we can afford such a low tapping term on the left one
+because Return is not pressed inside a sentence like "space" so there is no risk of misfiring the layer toggle
+when we didn't mean to while writing a sentence. While on the right one we mainly map utility keys so nothing
+that needs to be used in a sentence.
 
 # Layers
 There are 10 layers:
