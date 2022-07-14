@@ -39,7 +39,8 @@ I couldn't manage to make the github action workflow work so it must be manually
 - Utility layer: default layer-toggle timings
 - Common layer: "Balanced" with only 135ms tapping term for quick access while typing text
 
-The idea behind the two thumb cluster keys is that we can afford such a low tapping term on the left one
+The idea behind the 
+ thumb cluster keys is that we can afford such a low tapping term on the left one
 because Return is not pressed inside a sentence like "space" so there is no risk of misfiring the layer toggle
 when we didn't mean to while writing a sentence. While on the right one we mainly map utility keys so nothing
 that needs to be used in a sentence.
@@ -146,6 +147,6 @@ RET and SPC are swapped as SPACE is used in videogames.
 
 Press both thumb keys to get back to BASE layer.
 
-# Two-Five
+# Twive
 
-![TwoFive Layout](https://github.com/fractalysid/TwoFive-Layout/blob/symbols_rework/TwoFive.png?raw=true)
+![Twive Layout](https://github.com/fractalysid/Twive-Layout/blob/symbols_rework/Twive.png?raw=true)
