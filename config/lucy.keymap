@@ -191,7 +191,7 @@
        		default_layer {
 		bindings = <
 		&kp Q &kp W &kp F &kp P &kp B 						                                            &kp J &kp L  &kp U    &kp Y   &kp BKSP
-		&m_left LSHFT A &hl_left NUMBERS R &hl_left MEDIA S &hl_left RIGHT_SYMBOLS T &kp G 			            &kp M &hl_right LEFT_SYMBOLS N &hl_right FUNCTIONS E &hl_right NAVIGATION I &m_right LSHFT O
+		&m_left LSHFT A &hl_left NUMBERS R &hl_left MEDIA S &hl_left RIGHT_SYMBOLS T &kp G 			    &kp M &hl_right LEFT_SYMBOLS N &hl_right FUNCTIONS E &hl_right NAVIGATION I &m_right LSHFT O
 		&m_left LSHFT Z &m_left LCTRL X &m_left LALT C &m_left LGUI D &kp V		                        &kp K &m_right LGUI H  &m_right LALT CMMA &m_right LCTRL DOT &m_right LSHFT IT_SQUOT
           	                                    &ltt COMMON RET &none &none  		                    &none &none &lt UTILITY SPC
 		>;
