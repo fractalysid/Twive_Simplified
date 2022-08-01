@@ -263,9 +263,9 @@
 // NUMBERS KEYS
 		    numbers_layer {
 		bindings = <
-		&trans &trans &trans &trans &trans                                      &trans &kp N7 &kp N8 &kp N9 &trans
-        &trans &none &trans &trans &trans                                       &kp COMMA &kp N1 &kp N2 &kp N3 &kp N0
-        &trans &trans &trans &trans &trans                                      &trans &kp N4 &kp N5 &kp N6 &kp DOT
+		&trans &trans &kp IT_AST &kp IT_FSLH &trans                             &trans &kp N7 &kp N8 &kp N9 &trans
+        &trans &none &kp IT_PLUS &kp IT_MINUS &trans                            &kp COMMA &kp N1 &kp N2 &kp N3 &kp N0
+        &trans &trans &kp IT_EQL &trans &trans                                  &trans &kp N4 &kp N5 &kp N6 &kp DOT
                       &trans &trans &trans                                      &trans &trans &trans
 		>;
 		};
