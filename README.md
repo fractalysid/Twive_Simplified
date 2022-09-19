@@ -50,8 +50,8 @@ There are 10 layers:
 - BASE: Colemak-DH
 - UTILITY
 - COMMON
-- RIGHT SYMBOLS
-- LEFT SYMBOLS
+- SYMBOLS 1
+- SYMBOLS 2
 - FUNCTIONS
 - NUMBERS
 - NAVIGATION
@@ -59,16 +59,9 @@ There are 10 layers:
 - KEYBOARD
 - ~~QWERTY~~
 
-Layers in the home row are placed in order to have the most used ones in the inner
-and outer fingers balanced between left and right half ( not considering pinkies in this case).
-The reason behind not using the middle column for the frequently used layers is
-because by using the outer/inner column we leave two consecutive fingers free to press
-others keys comfortably which is not the case for the middle finger.
-
-
-|  NUMBERS  |  MEDIA   | RSYMBOLS  |       | LSYMBOLS  | FUNCTIONS | NAVIGATION |
-|:---------:|:--------:|:---------:|:-----:|:---------:|:---------:|:----------:|
-| High Freq | Low Freq | High Freq |       | High Freq | Low Freq  | High Freq  |
+Idea for layer keys comes from the fact that simbols and numbers most probably requires the backspace
+to be accessible while using to they are in the right side. All the others are on the left side so we
+can use the right pinky key that is otherwise reserved for backspace.
 
 ## Base
 Here we find the COLEMAK-DH. Hyphen is replaced by Apostrophe ' as it is very common

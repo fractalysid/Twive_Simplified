@@ -25,10 +25,10 @@
 #define NAVIGATION              3
 
 // Symbols accessed on the right side by pressing a key on the left side
-#define RIGHT_SYMBOLS           4
+#define SYMBOLS1                4
 
 // Symbols accessed on the left side by pressing a key on the right side
-#define LEFT_SYMBOLS            5
+#define SYMBOLS2                5
 
 // Only FN keys, this layer can definitely made richer
 #define FUNCTIONS               6
@@ -191,7 +191,7 @@
        		default_layer {
 		bindings = <
 		&kp Q &kp W &kp F &kp P &kp B 						                                            &kp J &kp L  &kp U    &kp Y   &kp BKSP
-		&m_left LSHFT A &hl_left NUMBERS R &hl_left MEDIA S &hl_left RIGHT_SYMBOLS T &kp G 			    &kp M &hl_right LEFT_SYMBOLS N &hl_right FUNCTIONS E &hl_right NAVIGATION I &m_right LSHFT O
+		&m_left LSHFT A &hl_left NAVIGATION R &hl_left FUNCTIONS S &hl_left MEDIA T &kp G 			    &kp M &hl_right NUMBERS N &hl_right SYMBOLS1 E &hl_right SYMBOLS2 I &m_right LSHFT O
 		&m_left LSHFT Z &m_left LCTRL X &m_left LALT C &m_left LGUI D &kp V		                        &kp K &m_right LGUI H  &m_right LALT CMMA &m_right LCTRL DOT &m_right LSHFT IT_SQUOT
           	                                    &ltt COMMON RET &none &none  		                    &none &none &lt UTILITY SPC
 		>;
@@ -203,14 +203,17 @@
 // Non so perché ma  &kp K_COPY &kp K_PASTE &kp K_CUT non funzionano
 		    utility_layer {
 		bindings = <
-		&kp ESC &trans &caps_word &trans &trans            			    &kp INSERT &kp LC(Z) &kp LC(LS(Z)) &kp PRINTSCREEN &kp DEL
+		&kp ESC &trans &caps_word &kp CAPS &trans         			    &kp INSERT &kp LC(Z) &kp LC(LS(Z)) &kp PRINTSCREEN &kp DEL
 		&kp TAB &sk LALT &sk LCTRL &sk LSHIFT &gmail                   	&kp LG(SPC) &kp LGUI  &kp LC(C) &kp LC(V) &kp LC(X)
-		&sk LGUI &trans &trans &trans &trans    			            &trans &trans &trans &trans &trans
+		&sk LGUI &trans &trans &trans &trans    			            &trans &trans &trans &trans &kp LC(DEL)
 					    &trans &trans &trans  					        &trans &trans &none
 		>;
 		};
 
 // COMMON LAYER with commonly accessed symbols like accents on the left and shell symbols on the right
+// mostly symbols which are used while common typing and so need a shorter hold time
+// All the symbols on the right have been also placed in the 2 SYMBOLS layouts so it may be completely reworked to account for
+// easily accessible combos or other frequently used keys
             common_layer {
 		bindings = <
 		&kp IT_EXCL &kp IT_CEGR &kp IT_UGRV &trans  &trans                      &trans &kp IT_AND &kp IT_PIPE &kp IT_QUES &kp LC(BKSP)
@@ -223,30 +226,32 @@
 // NAVIGATION LAYER
 		    navigation_layer {
 		bindings = <
-		&kp HOME &kp PAGE_UP &kp PAGE_DOWN &kp END &kp LC(LS(TAB))                      &trans &kp LC(LA(LEFT))   &trans   &trans  &trans
-		&kp LEFT &kp UP &kp DOWN &kp RIGHT &kp LC(TAB)		                            &trans &kp LGUI  &kp LC(LSHIFT) &none &kp LCTRL
-		&kp K_FORWARD  &kp LC(LA(UP)) &kp LC(LA(DOWN)) &kp LA(TAB) &kp K_BACK   		&trans &kp LC(LA(RIGHT))  &trans  &trans &trans
-					                &trans &trans &trans  			                    &trans &trans &trans
+		&trans &trans &trans &trans &trans                                      &kp LC(LS(TAB)) &kp HOME &kp PAGE_UP &kp PAGE_DOWN &kp END
+		&trans &none &trans &kp LA(TAB) &trans                                  &kp LC(TAB) &kp LEFT &kp UP &kp DOWN &kp RIGHT
+		&trans &trans &trans &trans &trans                                      &kp K_BACK &kp K_FORWARD  &kp LC(LA(UP)) &kp LC(LA(DOWN)) &kp K_FORWARD
+		            &kp LC(LA(LEFT)) &trans &trans  			                &trans &trans &kp LC(LA(RIGHT))
 		>;
 		};
 
-// RIGHT SYMBOLS
-            rsymbols_layer {
+// SYMBOLS 1
+// &kp IT_VIRGOLETTE_L  &kp IT_VIRGOLETTE_R removed, mostly useless
+// &kp IT_FSLH &IT_BSLH  are duplicated here and in SYMBOLS 2
+            symbols1_layer {
 		bindings = <
-		&trans &trans &trans &trans &trans    	                        &trans &kp IT_LBKT &kp IT_RBKT &kp IT_CARET &trans
-    	&trans &trans &trans &none &trans                               &trans &kp IT_LPAR &kp IT_RPAR &kp IT_LBRC &kp IT_RBRC
-		&trans &trans &trans &trans &trans	                            &trans &kp IT_LESS &kp IT_GREAT &kp IT_VIRGOLETTE_L  &kp IT_VIRGOLETTE_R
-					 &trans  &trans &trans                  			&trans &trans &trans
+		&kp IT_LBKT &kp IT_RBKT &kp IT_FSLH &kp IT_BSLH &trans                  &trans &trans &trans &trans &trans
+    	&kp IT_LPAR &kp IT_RPAR &kp IT_LBRC &kp IT_RBRC &trans                  &trans &none &trans &none &trans
+		&kp IT_LESS &kp IT_GREAT  &kp IT_PIPE &trans &trans                     &trans &trans &trans &trans &trans
+					                    &trans  &trans &trans  			        &trans &trans &trans
 		>;
 		};
 
-// LEFT SYMBOLS
-       		lsymbols_layer {
+//  SYMBOLS 2
+       		symbols2_layer {
 		bindings = <
-		&kp IT_PERC &kp IT_PLUS &kp IT_AST &kp IT_EQL &trans                  	        &trans &trans &trans &trans &trans
-		&kp IT_DQUOT &kp IT_AND &kp IT_HASH &kp IT_AT &trans                    		&trans &none &trans &trans &trans
-		&kp IT_DEGREE &kp IT_PND &kp IT_USD &kp IT_EUR  &trans                          &trans &trans &trans &trans &trans
-					  &trans  &trans &trans 			                                &trans &trans &trans
+		&kp IT_PERC &kp IT_UNDER &kp IT_FSLH &kp IT_BSLH &kp IT_CARET           &trans &trans &trans &trans &trans
+		&kp IT_DQUOT &kp IT_AND &kp IT_HASH &kp IT_AT &kp IT_BKTK               &trans &trans &none &trans &trans
+		&kp IT_TILDE &kp IT_PND &kp IT_USD &kp IT_EUR &kp IT_DEGREE             &trans &trans &trans &trans &trans
+					                            &trans  &trans &trans           &trans &trans &trans
 		>;
 		};
 
@@ -254,27 +259,29 @@
 // Access to &sysrq_emergency_reboot is intentionally cumbersome to avoid pressing it by mistake
 		    functions_layer {
 		bindings = <
-		&kp F10 &kp F7 &kp F8 &kp F9 &trans                                     &trans &trans &trans &trans &trans
-        &kp F11 &kp F4 &kp F5 &kp F6 &trans                                     &sysrq_emergency_reboot &kp LA(LCTL) &none &trans &trans
-        &kp F12 &kp F1 &kp F2 &kp F3 &trans                                     &trans &trans &trans &trans &trans
-                       &trans &trans &trans
+		&trans &trans &trans &trans &trans                                      &trans &kp F7 &kp F8 &kp F9 &kp F10
+        &trans &trans &none &kp LA(LCTL) &sysrq_emergency_reboot                &trans &kp F4 &kp F5 &kp F6 &kp F11
+        &trans &trans &trans &trans &trans                                      &trans &kp F1 &kp F2 &kp F3 &kp F12
+                       &trans &trans &trans                                     &trans &trans &trans
 		>;
 		};	
 // NUMBERS KEYS
+// COMMA and DOT are accessed through trans on the DEFAULT layer. We even have left thumb free to be used
 		    numbers_layer {
 		bindings = <
-		&trans &trans &kp IT_AST &kp IT_FSLH &trans                             &trans &kp N7 &kp N8 &kp N9 &trans
-        &trans &none &kp IT_PLUS &kp IT_MINUS &trans                            &kp COMMA &kp N1 &kp N2 &kp N3 &kp N0
-        &trans &trans &kp IT_EQL &trans &trans                                  &trans &kp N4 &kp N5 &kp N6 &kp DOT
+		&kp IT_FSLH &kp N7 &kp N8 &kp N9 &kp IT_PLUS                            &trans &trans &trans &trans &trans
+        &kp N0 &kp N1 &kp N2 &kp N3 &kp IT_MINUS                                &trans &none &trans &trans &trans
+        &kp IT_AST &kp N4 &kp N5 &kp N6 &kp IT_EQL                              &trans &trans &trans &trans &trans
                       &trans &trans &trans                                      &trans &trans &trans
 		>;
 		};
 
 // MEDIA LAYER
+// TODO: add mouse buttons
 		    media_layer {
 		bindings = <
 		&trans  &trans &trans &trans &trans 		                            &kp K_MUTE &kp K_VOLUME_DOWN   &kp K_VOLUME_UP   &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC
-		&trans  &trans &none &trans &trans  			                        &trans &kp K_PLAY_PAUSE  &kp K_PREV &kp K_NEXT &kp K_STOP2
+		&trans  &trans &trans &none &trans  			                        &trans &kp K_PLAY_PAUSE  &kp K_PREV &kp K_NEXT &kp K_STOP2
 		&trans  &trans &trans &trans &trans   			                        &trans &trans &trans &trans &trans
 				            	&trans &trans &trans  					        &trans &trans &trans
 		>;
