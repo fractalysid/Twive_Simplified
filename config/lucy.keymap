@@ -238,7 +238,7 @@
  		bindings = <
  		&kp IT_PERC &kp IT_PIPE &kp IT_FSLH &kp IT_BSLH &kp IT_BKTK           &trans &trans &trans &trans &trans
  		&kp IT_DQUOT &kp IT_AND &kp IT_HASH &kp IT_AT &kp IT_DEGREE           &trans &trans &trans &none &trans
- 		&kp IT_TILDE &kp IT_EQL &kp IT_USD &kp IT_EUR &kp IT_PND              &trans &trans &trans &trans &trans
+ 		&kp IT_EQL &kp IT_PND &kp IT_USD &kp IT_EUR &kp IT_TILDE              &trans &trans &trans &trans &trans
  					                            &trans &trans &trans         &trans &trans &trans
  		>;
  		};
