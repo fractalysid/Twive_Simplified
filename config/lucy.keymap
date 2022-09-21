@@ -236,10 +236,10 @@
 //  SYMBOLS LEFT
         		symbols_left_layer {
  		bindings = <
- 		&kp IT_PERC &kp IT_UNDER &kp IT_FSLH &kp IT_BSLH &kp IT_CARET           &trans &trans &trans &trans &trans
- 		&kp IT_DQUOT &kp IT_AND &kp IT_HASH &kp IT_AT &kp IT_BKTK               &trans &trans &trans &none &trans
- 		&kp IT_TILDE &kp IT_PND &kp IT_USD &kp IT_EUR &kp IT_DEGREE             &trans &trans &trans &trans &trans
- 					                            &trans  &trans &trans           &trans &trans &trans
+ 		&kp IT_PERC &kp IT_PIPE &kp IT_FSLH &kp IT_BSLH &kp IT_BKTK           &trans &trans &trans &trans &trans
+ 		&kp IT_DQUOT &kp IT_AND &kp IT_HASH &kp IT_AT &kp IT_DEGREE           &trans &trans &trans &none &trans
+ 		&kp IT_TILDE &kp IT_EQL &kp IT_USD &kp IT_EUR &kp IT_PND              &trans &trans &trans &trans &trans
+ 					                            &trans &trans &trans         &trans &trans &trans
  		>;
  		};
 
@@ -249,8 +249,8 @@
             symbols_right_layer {
 		bindings = <
 		&trans &trans &trans &trans &trans                                      &trans &kp IT_LBKT &kp IT_RBKT &kp IT_FSLH &trans
-    	&trans &none &trans &trans &trans                                       &trans &kp IT_LPAR &kp IT_RPAR &kp IT_LBRC &kp IT_RBRC
-		&trans &trans &trans &trans &trans                                      &trans &kp IT_LESS &kp IT_GREAT  &kp IT_BSLH &kp IT_PIPE
+    	&trans &none &trans &trans &trans                                       &kp IT_USD &kp IT_LPAR &kp IT_RPAR &kp IT_LBRC &kp IT_RBRC
+		&trans &trans &trans &trans &trans                                      &trans &kp IT_LESS &kp IT_GREAT  &kp LS(DOT) &kp LS(COMMA)
 					       &trans  &trans &trans              			        &trans &trans &trans
 		>;
 		};
