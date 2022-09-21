@@ -25,10 +25,10 @@
 #define NAVIGATION              3
 
 // Symbols accessed on the right side by pressing a key on the left side
-#define SYMBOLS1                4
+#define SYMBOLS_LEFT            4
 
 // Symbols accessed on the left side by pressing a key on the right side
-#define SYMBOLS2                5
+#define SYMBOLS_RIGHT           5
 
 // Only FN keys, this layer can definitely made richer
 #define FUNCTIONS               6
@@ -191,7 +191,7 @@
        		default_layer {
 		bindings = <
 		&kp Q &kp W &kp F &kp P &kp B 						                                            &kp J &kp L  &kp U    &kp Y   &kp BKSP
-		&m_left LSHFT A &hl_left NAVIGATION R &hl_left FUNCTIONS S &hl_left MEDIA T &kp G 			    &kp M &hl_right NUMBERS N &hl_right SYMBOLS1 E &hl_right SYMBOLS2 I &m_right LSHFT O
+		&m_left LSHFT A &hl_left SYMBOLS_RIGHT R &hl_left MEDIA S &hl_left NAVIGATION T &kp G 			&kp M &hl_right NUMBERS N &hl_right FUNCTIONS E &hl_right SYMBOLS_LEFT I &m_right LSHFT O
 		&m_left LSHFT Z &m_left LCTRL X &m_left LALT C &m_left LGUI D &kp V		                        &kp K &m_right LGUI H  &m_right LALT CMMA &m_right LCTRL DOT &m_right LSHFT IT_SQUOT
           	                                    &ltt COMMON RET &none &none  		                    &none &none &lt UTILITY SPC
 		>;
@@ -227,31 +227,31 @@
 		    navigation_layer {
 		bindings = <
 		&trans &trans &trans &trans &trans                                      &kp LC(LS(TAB)) &kp HOME &kp PAGE_UP &kp PAGE_DOWN &kp END
-		&trans &none &trans &kp LA(TAB) &trans                                  &kp LC(TAB) &kp LEFT &kp UP &kp DOWN &kp RIGHT
+		&kp LA(TAB) &trans &trans &none &trans                                  &kp LC(TAB) &kp LEFT &kp UP &kp DOWN &kp RIGHT
 		&trans &trans &trans &trans &trans                                      &kp K_BACK &kp K_FORWARD  &kp LC(LA(UP)) &kp LC(LA(DOWN)) &kp K_FORWARD
 		            &kp LC(LA(LEFT)) &trans &trans  			                &trans &trans &kp LC(LA(RIGHT))
 		>;
 		};
 
-// SYMBOLS 1
+//  SYMBOLS LEFT
+        		symbols_left_layer {
+ 		bindings = <
+ 		&kp IT_PERC &kp IT_UNDER &kp IT_FSLH &kp IT_BSLH &kp IT_CARET           &trans &trans &trans &trans &trans
+ 		&kp IT_DQUOT &kp IT_AND &kp IT_HASH &kp IT_AT &kp IT_BKTK               &trans &trans &trans &none &trans
+ 		&kp IT_TILDE &kp IT_PND &kp IT_USD &kp IT_EUR &kp IT_DEGREE             &trans &trans &trans &trans &trans
+ 					                            &trans  &trans &trans           &trans &trans &trans
+ 		>;
+ 		};
+
+// SYMBOLS RIGHT
 // &kp IT_VIRGOLETTE_L  &kp IT_VIRGOLETTE_R removed, mostly useless
 // &kp IT_FSLH &IT_BSLH  are duplicated here and in SYMBOLS 2
-            symbols1_layer {
+            symbols_right_layer {
 		bindings = <
-		&kp IT_LBKT &kp IT_RBKT &kp IT_FSLH &kp IT_BSLH &trans                  &trans &trans &trans &trans &trans
-    	&kp IT_LPAR &kp IT_RPAR &kp IT_LBRC &kp IT_RBRC &trans                  &trans &none &trans &none &trans
-		&kp IT_LESS &kp IT_GREAT  &kp IT_PIPE &trans &trans                     &trans &trans &trans &trans &trans
-					                    &trans  &trans &trans  			        &trans &trans &trans
-		>;
-		};
-
-//  SYMBOLS 2
-       		symbols2_layer {
-		bindings = <
-		&kp IT_PERC &kp IT_UNDER &kp IT_FSLH &kp IT_BSLH &kp IT_CARET           &trans &trans &trans &trans &trans
-		&kp IT_DQUOT &kp IT_AND &kp IT_HASH &kp IT_AT &kp IT_BKTK               &trans &trans &none &trans &trans
-		&kp IT_TILDE &kp IT_PND &kp IT_USD &kp IT_EUR &kp IT_DEGREE             &trans &trans &trans &trans &trans
-					                            &trans  &trans &trans           &trans &trans &trans
+		&trans &trans &trans &trans &trans                                      &trans &kp IT_LBKT &kp IT_RBKT &kp IT_FSLH &trans
+    	&trans &none &trans &trans &trans                                       &trans &kp IT_LPAR &kp IT_RPAR &kp IT_LBRC &kp IT_RBRC
+		&trans &trans &trans &trans &trans                                      &trans &kp IT_LESS &kp IT_GREAT  &kp IT_BSLH &kp IT_PIPE
+					       &trans  &trans &trans              			        &trans &trans &trans
 		>;
 		};
 
@@ -281,7 +281,7 @@
 		    media_layer {
 		bindings = <
 		&trans  &trans &trans &trans &trans 		                            &kp K_MUTE &kp K_VOLUME_DOWN   &kp K_VOLUME_UP   &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC
-		&trans  &trans &trans &none &trans  			                        &trans &kp K_PLAY_PAUSE  &kp K_PREV &kp K_NEXT &kp K_STOP2
+		&trans  &trans &none &trans &trans  			                        &trans &kp K_PLAY_PAUSE  &kp K_PREV &kp K_NEXT &kp K_STOP2
 		&trans  &trans &trans &trans &trans   			                        &trans &trans &trans &trans &trans
 				            	&trans &trans &trans  					        &trans &trans &trans
 		>;
