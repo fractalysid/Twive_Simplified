@@ -195,6 +195,7 @@
 		};
 
 // UTILITY LAYER
+// Back and Forward omitted
 		    utility_layer {
 		bindings = <
 		&kp ESC &kp PRINTSCREEN &caps_word &kp CAPS &kp INSERT          &kp HOME &kp END &kp PAGE_UP &kp PAGE_DOWN &kp DEL
@@ -205,6 +206,7 @@
 		};
 
 // SYMBOLS LAYER
+// A few symbols are missing: ° (grade), £ (pound)
             symbols_layer {
 		bindings = <
 		&kp IT_EXCL &kp IT_DQUOT &kp IT_UGRV &kp IT_AND  &kp IT_PIPE            &kp IT_BSLH &kp IT_LBKT &kp IT_RBKT &kp IT_QUES &kp LC(BKSP)
@@ -215,6 +217,8 @@
 		};
 
 // NUMBERS, FUNCTIONS AND MEDIA KEYS
+// Only play/pause and volume control fit in this layout
+// TODO: consider the idea of using combos to access other media keys
 		    num_fn_media_layer {
 		bindings = <
 		&kp IT_FSLH &kp N7 &kp N8 &kp N9 &kp IT_PLUS                            &kp K_VOLUME_UP &kp F7 &kp F8 &kp F9 &kp F10
