@@ -14,42 +14,31 @@
 // Base Colemak-DH layer
 #define DEFAULT                 0
 
-// The layer always accessible through the right thumb cluster with access to TAB, ESC, DELETE, CAPS WORD
-// GNOME layout switch, KEYBOARD layer and other special functions
+// Utility and navigation keys are here
 #define UTILITY                 1
 
-// Common keys, like those used in the shell, accents and so on
-#define COMMON                  2
+// Symbols and accented letters
+#define SYMBOLS                 2
 
-// Navigation layer with arrows, page up, down and so on
-#define NAVIGATION              3
+// Numbers or the left, functions on the right and only 3 keys for media
+#define NUM_FN_MEDIA            3
 
-// Symbols accessed on the right side by pressing a key on the left side
-#define SYMBOLS_LEFT            4
-
-// Symbols accessed on the left side by pressing a key on the right side
-#define SYMBOLS_RIGHT           5
-
-// Only FN keys, this layer can definitely made richer
-#define FUNCTIONS               6
-
-// Numbers and operators
-#define NUMBERS                 7
-
-// Media keys
-#define MEDIA                   8
-
-// Keyboard functions like reset, bootloader mode and bluetooth management
-#define KEYBOARD                9
+// Accessed from NUM_FN_MEDIA through the top pinkies
+#define KEYBOARD                4
 
 // Qwerty layer in case I would like to use the keyboard for gaming
-#define QWERTY                  10
+#define QWERTY                  5
 
 &mt {
     //tapping-term-ms = <300>;
     //quick_tap_ms = <0>;
     //flavor = "tap-preferred";
     //retro-tap;
+};
+
+// configure the sticky layer behavior
+&sl {
+    release-after-ms = <3000>;
 };
 
 / {
@@ -93,6 +82,14 @@
     combos {
         compatible = "zmk,combos";
 
+        // Activate the KEYBOARD layer for only one key press
+        combo_goto_keyboard {
+            timeout-ms = <50>;
+            layers= <NUM_FN_MEDIA>;
+            key-positions = <0 9>;
+            bindings = <&sl KEYBOARD>;
+        };
+
         // Get back to default layer by pressing both thumb keys
         combo_escape_qwerty {
             timeout-ms = <50>;
@@ -104,9 +101,9 @@
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
-        tri_keyboard_layer {
+        tri_layer {
             if-layers = <1 2>;
-            then-layer = <9>;
+            then-layer = <3>;
         };
     };
 
@@ -190,106 +187,44 @@
 //  DEFAULT-DH
        		default_layer {
 		bindings = <
-		&kp Q &kp W &kp F &kp P &kp B 						                                            &kp J &kp L  &kp U    &kp Y   &kp BKSP
-		&m_left LSHFT A &hl_left SYMBOLS_RIGHT R &hl_left MEDIA S &hl_left NAVIGATION T &kp G 			&kp M &hl_right NUMBERS N &hl_right FUNCTIONS E &hl_right SYMBOLS_LEFT I &m_right LSHFT O
-		&m_left LSHFT Z &m_left LCTRL X &m_left LALT C &m_left LGUI D &kp V		                        &kp K &m_right LGUI H  &m_right LALT CMMA &m_right LCTRL DOT &m_right LSHFT IT_SQUOT
-          	                                    &ltt COMMON RET &none &none  		                    &none &none &lt UTILITY SPC
+		&kp Q &kp W &kp F &kp P &kp B                                               &kp J &kp L  &kp U    &kp Y   &kp BKSP
+		&m_left LSHFT A &kp R &kp S &kp T &kp G 			                        &kp M &kp N &kp E &kp I &m_right LSHFT O
+		&m_left LSHFT Z &m_left LCTRL X &m_left LALT C &m_left LGUI D &kp V		    &kp K &m_right LGUI H  &m_right LALT CMMA &m_right LCTRL DOT &m_right LSHFT IT_SQUOT
+          	                                   &ltt SYMBOLS RET &none &none  		&none &none &lt UTILITY SPC
 		>;
 		};
 
-// UTILITY LAYER, ALWAYS ACCESSIBLE
-// TODO: posso usare questo layer per aggiungere macro ma posso anche pensare di aggiungere qualcosa sulla home row
-// del lato destro
-// Non so perché ma  &kp K_COPY &kp K_PASTE &kp K_CUT non funzionano
+// UTILITY LAYER
 		    utility_layer {
 		bindings = <
-		&kp ESC &trans &caps_word &kp CAPS &trans         			    &kp INSERT &kp LC(Z) &kp LC(LS(Z)) &kp PRINTSCREEN &kp DEL
-		&kp TAB &sk LALT &sk LCTRL &sk LSHIFT &gmail                   	&kp LG(SPC) &kp LGUI  &kp LC(C) &kp LC(V) &kp LC(X)
-		&sk LGUI &trans &trans &trans &trans    			            &trans &trans &trans &trans &kp LC(DEL)
-					    &trans &trans &trans  					        &trans &trans &none
+		&kp ESC &kp PRINTSCREEN &caps_word &kp CAPS &kp INSERT          &kp HOME &kp END &kp PAGE_UP &kp PAGE_DOWN &kp DEL
+		&kp TAB &sk LALT &sk LCTRL &sk LSHIFT &kp LGUI                 	&kp LC(LS(TAB)) &kp LEFT &kp UP &kp DOWN &kp RIGHT
+		&kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp LC(LS(Z))           &kp LA(TAB) &kp LC(LS(TAB)) &kp LC(LA(UP)) &kp LC(LA(DOWN)) &kp LC(TAB)
+					                     &trans &trans &trans           &trans &trans &none
 		>;
 		};
 
-// COMMON LAYER with commonly accessed symbols like accents on the left and shell symbols on the right
-// mostly symbols which are used while common typing and so need a shorter hold time
-// All the symbols on the right have been also placed in the 2 SYMBOLS layouts so it may be completely reworked to account for
-// easily accessible combos or other frequently used keys
-            common_layer {
+// SYMBOLS LAYER
+            symbols_layer {
 		bindings = <
-		&kp IT_EXCL &kp IT_CEGR &kp IT_UGRV &trans  &trans                      &trans &kp IT_AND &kp IT_PIPE &kp IT_QUES &kp LC(BKSP)
-		&kp IT_IGRV &kp IT_AGRV &kp IT_OGRV &kp IT_EGRV &kp IT_EACU             &trans &kp IT_FSLH &kp DOT &kp IT_MINUS &kp IT_UNDER
-		&trans &trans &trans &trans &trans    			                        &trans &kp IT_BSLH &kp IT_BKTK &kp IT_TILDE &trans
-					   &none &trans &trans  					                &trans &trans &trans
+		&kp IT_EXCL &kp IT_DQUOT &kp IT_UGRV &kp IT_AND  &kp IT_PIPE            &kp IT_BSLH &kp IT_LBKT &kp IT_RBKT &kp IT_QUES &kp LC(BKSP)
+		&kp IT_IGRV &kp IT_AGRV &kp IT_OGRV &kp IT_EGRV &kp IT_EACU             &kp IT_USD &kp IT_LPAR &kp IT_RPAR &kp IT_LBRC &kp IT_RBRC
+		&kp IT_PERC &kp IT_EUR &kp IT_HASH &kp IT_AT &kp IT_TILDE               &kp IT_BKTK &kp IT_LESS &kp IT_GREAT &kp IT_MINUS &kp IT_UNDER
+					                             &none &trans &trans            &trans &trans &trans
 		>;
 		};
 
-// NAVIGATION LAYER
-		    navigation_layer {
+// NUMBERS, FUNCTIONS AND MEDIA KEYS
+		    num_fn_media_layer {
 		bindings = <
-		&trans &trans &trans &trans &trans                                      &kp LC(LS(TAB)) &kp HOME &kp PAGE_UP &kp PAGE_DOWN &kp END
-		&kp LA(TAB) &trans &trans &none &trans                                  &kp LC(TAB) &kp LEFT &kp UP &kp DOWN &kp RIGHT
-		&trans &trans &trans &trans &trans                                      &kp K_BACK &kp K_FORWARD  &kp LC(LA(UP)) &kp LC(LA(DOWN)) &kp K_FORWARD
-		            &kp LC(LA(LEFT)) &trans &trans  			                &trans &trans &kp LC(LA(RIGHT))
-		>;
-		};
-
-//  SYMBOLS LEFT
-        		symbols_left_layer {
- 		bindings = <
- 		&kp IT_PERC &kp IT_PIPE &kp IT_FSLH &kp IT_BSLH &kp IT_BKTK           &trans &trans &trans &trans &trans
- 		&kp IT_DQUOT &kp IT_AND &kp IT_HASH &kp IT_AT &kp IT_DEGREE           &trans &trans &trans &none &trans
- 		&kp IT_EQL &kp IT_PND &kp IT_USD &kp IT_EUR &kp IT_TILDE              &trans &trans &trans &trans &trans
- 					                            &trans &trans &trans         &trans &trans &trans
- 		>;
- 		};
-
-// SYMBOLS RIGHT
-// &kp IT_VIRGOLETTE_L  &kp IT_VIRGOLETTE_R removed, mostly useless
-// &kp IT_FSLH &IT_BSLH  are duplicated here and in SYMBOLS 2
-            symbols_right_layer {
-		bindings = <
-		&trans &trans &trans &trans &trans                                      &trans &kp IT_LBKT &kp IT_RBKT &kp IT_FSLH &trans
-    	&trans &none &trans &trans &trans                                       &kp IT_USD &kp IT_LPAR &kp IT_RPAR &kp IT_LBRC &kp IT_RBRC
-		&trans &trans &trans &trans &trans                                      &trans &kp IT_LESS &kp IT_GREAT  &kp LS(DOT) &kp LS(COMMA)
-					       &trans  &trans &trans              			        &trans &trans &trans
-		>;
-		};
-
-// FUNCTIONS KEYS
-// Access to &sysrq_emergency_reboot is intentionally cumbersome to avoid pressing it by mistake
-		    functions_layer {
-		bindings = <
-		&trans &trans &trans &trans &trans                                      &trans &kp F7 &kp F8 &kp F9 &kp F10
-        &trans &trans &none &kp LA(LCTL) &sysrq_emergency_reboot                &trans &kp F4 &kp F5 &kp F6 &kp F11
-        &trans &trans &trans &trans &trans                                      &trans &kp F1 &kp F2 &kp F3 &kp F12
-                       &trans &trans &trans                                     &trans &trans &trans
-		>;
-		};	
-// NUMBERS KEYS
-// COMMA and DOT are accessed through trans on the DEFAULT layer. We even have left thumb free to be used
-		    numbers_layer {
-		bindings = <
-		&kp IT_FSLH &kp N7 &kp N8 &kp N9 &kp IT_PLUS                            &trans &trans &trans &trans &trans
-        &kp N0 &kp N1 &kp N2 &kp N3 &kp IT_MINUS                                &trans &none &trans &trans &trans
-        &kp IT_AST &kp N4 &kp N5 &kp N6 &kp IT_EQL                              &trans &trans &trans &trans &trans
-                      &trans &trans &trans                                      &trans &trans &trans
-		>;
-		};
-
-// MEDIA LAYER
-// TODO: add mouse buttons
-		    media_layer {
-		bindings = <
-		&trans  &trans &trans &trans &trans 		                            &kp K_MUTE &kp K_VOLUME_DOWN   &kp K_VOLUME_UP   &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC
-		&trans  &trans &none &trans &trans  			                        &trans &kp K_PLAY_PAUSE  &kp K_PREV &kp K_NEXT &kp K_STOP2
-		&trans  &trans &trans &trans &trans   			                        &trans &trans &trans &trans &trans
-				            	&trans &trans &trans  					        &trans &trans &trans
+		&kp IT_FSLH &kp N7 &kp N8 &kp N9 &kp IT_PLUS                            &kp K_VOLUME_UP &kp F7 &kp F8 &kp F9 &kp F10
+        &kp N0 &kp N1 &kp N2 &kp N3 &kp IT_MINUS                                &kp K_PLAY_PAUSE &kp F4 &kp F5 &kp F6 &kp F11
+        &kp IT_AST &kp N4 &kp N5 &kp N6 &kp IT_EQL                              &kp K_VOLUME_DOWN &kp F1 &kp F2 &kp F3 &kp F12
+                               &trans &trans &trans                             &trans &trans &trans
 		>;
 		};
 
 // KEYBOARD LAYER
-// reset and bootloader must be present on both sides as they only work on the side where they are pressed
-// BT_CLR is intentionally placed in a cumbersome position
 		    keyboard_layer {
 		bindings = <
 		&reset  &bootloader &none &none &out OUT_USB 			        &out OUT_BLE &none   &none   &bootloader  &reset
