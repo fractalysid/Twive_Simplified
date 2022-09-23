@@ -179,9 +179,9 @@
 // A few symbols are missing: ° (grade), £ (pound)
             symbols_layer {
 		bindings = <
-		&kp IT_EXCL &kp IT_DQUOT &kp IT_UGRV &kp IT_AND  &kp IT_PIPE            &kp IT_BSLH &kp IT_LBKT &kp IT_RBKT &kp IT_QUES &kp LC(BKSP)
+		&kp IT_EXCL &kp IT_DQUOT &kp IT_UGRV &kp IT_AND  &kp IT_CARET           &kp IT_BSLH &kp IT_LBKT &kp IT_RBKT &kp IT_QUES &kp LC(BKSP)
 		&kp IT_IGRV &kp IT_AGRV &kp IT_OGRV &kp IT_EGRV &kp IT_EACU             &kp IT_USD &kp IT_LPAR &kp IT_RPAR &kp IT_LBRC &kp IT_RBRC
-		&kp IT_PERC &kp IT_EUR &kp IT_HASH &kp IT_AT &kp IT_TILDE               &kp IT_BKTK &kp IT_LESS &kp IT_GREAT &kp IT_MINUS &kp IT_UNDER
+		&kp IT_PERC &kp IT_EUR &kp IT_HASH &kp IT_AT &kp IT_TILDE               &kp IT_BKTK &kp IT_LESS &kp IT_GREAT &kp IT_PIPE &kp IT_UNDER
 					                             &none &trans &trans            &trans &trans &trans
 		>;
 		};
@@ -196,7 +196,7 @@
         &kp IT_AST &kp N4 &kp N5 &kp N6 &kp IT_EQL                              &kp K_VOLUME_DOWN &kp F1 &kp F2 &kp F3 &kp F12
                                &trans &trans &trans                             &trans &trans &trans
 		>;
-		};
+		};/
 
 // KEYBOARD LAYER
 		    keyboard_layer {
