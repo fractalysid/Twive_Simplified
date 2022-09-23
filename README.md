@@ -16,4 +16,4 @@ I couldn't manage to make the github action workflow work so it must be manually
 - Utility layer: default layer-toggle timings
 - Common layer: "Balanced" with only 135ms tapping term for quick access while typing text
 
-![Twive Simplified Layout](https://github.com/fractalysid/Twive_Simplified/blob/symbols_rework/Twive.png?raw=true)
+![Twive Simplified Layout](https://github.com/fractalysid/Twive_Simplified/blob/master/Twive.png?raw=true)
