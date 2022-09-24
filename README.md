@@ -5,6 +5,7 @@ This is still Twive, with 2^5 keys, 5 layers and only 2 keys on the thumb cluste
 
 ZMK config files for the [Lucy](https://github.com/fractalysid/Lucy-Keyboard) v0.2 keyboard.
 I couldn't manage to make the github action workflow work so it must be manually compiled.
+A sample bash script to compile the firmware is provided, compile_example.sh. Remember to edit it modifying the variables.
 
 ## Design principles differences with Twive
 - Less layers, accessed through the thumb cluster
