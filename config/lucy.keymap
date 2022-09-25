@@ -130,6 +130,7 @@
 
 // UTILITY LAYER
 // Back and Forward omitted
+// Ctrl+Shift+Tab is duplicated
 		    utility_layer {
 		bindings = <
 		&kp ESC &kp PRINTSCREEN &caps_word &kp CAPS &kp INSERT          &kp HOME &kp END &kp PAGE_UP &kp PAGE_DOWN &kp DEL
