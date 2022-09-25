@@ -43,42 +43,6 @@
 
 / {
 
-    macros {
-           gmail: gmail {
-               label = "gmail_email";
-               compatible = "zmk,behavior-macro";
-               #binding-cells = <0>;
-               wait-ms = <30>;
-               tap-ms = <40>;
-               bindings
-                   = <
-                   &kp S &kp A &kp B &kp B &kp I &kp O
-                   >
-                   ;
-           };
-
-            // I don't know why but this doesn't work
-           sysrq_emergency_reboot: sysrq_emergency_reboot {
-                label = "reboot_linux_system_with_SysRq";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                wait-ms = <500>;
-                tap-ms = <40>;
-                bindings
-                     = <&macro_press &kp LALT>
-                     , <&macro_press &kp PRINTSCREEN>
-                     , <&kp R &kp E>
-                     , <&kp I>
-                     , <&kp S>
-                     , <&kp U>
-                     , <&kp B>
-                     , <&macro_release &kp LALT>
-                     , <&macro_release &kp PRINTSCREEN>
-                     ;
-           };
-
-       };
-
     combos {
         compatible = "zmk,combos";
 
@@ -196,7 +160,7 @@
         &kp IT_AST &kp N4 &kp N5 &kp N6 &kp IT_EQL                              &kp K_VOLUME_DOWN &kp F1 &kp F2 &kp F3 &kp F12
                                &trans &trans &trans                             &trans &trans &trans
 		>;
-		};/
+		};
 
 // KEYBOARD LAYER
 		    keyboard_layer {
