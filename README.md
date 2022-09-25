@@ -7,6 +7,8 @@ ZMK config files for the [Lucy](https://github.com/fractalysid/Lucy-Keyboard) v0
 I couldn't manage to make the github action workflow work so it must be manually compiled.
 A sample bash script to compile the firmware is provided, compile_example.sh. Remember to edit it modifying the variables.
 
+[Here](https://github.com/fractalysid/qmk_firmware) you can find my fork of [QMK](https://github.com/qmk/qmk_firmware) with the layout for the ferris sweep (it is a modified version where the keys in the right half are in reverse order). You can also find the keymap.json in the QMK directory.
+
 ## Design principles differences with Twive
 - Less layers, accessed through the thumb cluster
 - A few combos to access extra keys which did not fit
