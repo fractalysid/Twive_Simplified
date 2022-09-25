@@ -39,7 +39,7 @@
       "LSFT_T(KC_QUOT)",
       "LT(2,KC_ENT)",
       "MO(4)",
-      "TO(10)",
+      "TO(6)",
       "LT(1,KC_SPC)"
     ],
     [
@@ -166,7 +166,7 @@
       "KC_NO",
       "KC_NO",
       "KC_NO",
-      "TO(9)",
+      "TO(5)",
       "KC_NO",
       "KC_NO",
       "KC_NO",
@@ -186,10 +186,6 @@
       "KC_NO",
       "KC_NO"
     ],
-    [],
-    [],
-    [],
-    [],
     [
       "KC_Q",
       "KC_W",
@@ -263,5 +259,5 @@
       "KC_NO"
     ]
   ],
-  "author": ""
+  "author": "Sabbio aka LaSabbiaDivinorum aka fractalysidss"
 }
