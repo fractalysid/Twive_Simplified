@@ -48,7 +48,7 @@
 
         // Activate the KEYBOARD layer for only one key press
         combo_goto_keyboard {
-            timeout-ms = <50>;
+            timeout-ms = <75>;
             layers= <NUM_FN_MEDIA>;
             key-positions = <0 9>;
             bindings = <&sl KEYBOARD>;
