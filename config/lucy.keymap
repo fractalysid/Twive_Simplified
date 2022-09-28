@@ -66,7 +66,7 @@
             timeout-ms = <30>;
             key-positions = <10 19 20 29>;
             bindings = <&to DEFAULT>;
-        }
+        };
    };
 
     conditional_layers {
