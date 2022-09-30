@@ -140,7 +140,7 @@
 		&kp ESC &kp PRINTSCREEN &caps_word &kp CAPS &kp INSERT          &kp HOME &kp END &kp PAGE_UP &kp PAGE_DOWN &kp DEL
 		&kp TAB &sk LALT &sk LCTRL &sk LSHIFT &kp LGUI                 	&kp LC(LS(TAB)) &kp LEFT &kp UP &kp DOWN &kp RIGHT
 		&kp LC(Z) &kp LC(X) &kp LC(C) &kp LC(V) &kp LC(LS(Z))           &kp LA(TAB) &kp LC(LS(TAB)) &kp LC(LA(UP)) &kp LC(LA(DOWN)) &kp LC(TAB)
-					                     &trans &trans &trans           &trans &trans &none
+					                     &trans &trans &trans           &trans &trans &trans
 		>;
 		};
 
@@ -151,7 +151,7 @@
 		&kp IT_EXCL &kp IT_DQUOT &kp IT_UGRV &kp IT_AND  &kp IT_CARET           &kp IT_BSLH &kp IT_LBKT &kp IT_RBKT &kp IT_QUES &kp LC(BKSP)
 		&kp IT_IGRV &kp IT_AGRV &kp IT_OGRV &kp IT_EGRV &kp IT_EACU             &kp IT_USD &kp IT_LPAR &kp IT_RPAR &kp IT_LBRC &kp IT_RBRC
 		&kp IT_PERC &kp IT_EUR &kp IT_HASH &kp IT_AT &kp IT_TILDE               &kp IT_BKTK &kp IT_LESS &kp IT_GREAT &kp IT_PIPE &kp IT_UNDER
-					                             &none &trans &trans            &trans &trans &trans
+					                             &trans &trans &trans            &trans &trans &trans
 		>;
 		};
 
@@ -163,7 +163,7 @@
 		&kp IT_FSLH &kp N7 &kp N8 &kp N9 &kp IT_PLUS                            &kp K_VOLUME_UP &kp F7 &kp F8 &kp F9 &kp F10
         &kp N0 &kp N1 &kp N2 &kp N3 &kp IT_MINUS                                &kp K_PLAY_PAUSE &kp F4 &kp F5 &kp F6 &kp F11
         &kp IT_AST &kp N4 &kp N5 &kp N6 &kp IT_EQL                              &kp K_VOLUME_DOWN &kp F1 &kp F2 &kp F3 &kp F12
-                               &none &trans &trans                             &trans &trans &none
+                               &trans &trans &trans                             &trans &trans &trans
 		>;
 		};
 
