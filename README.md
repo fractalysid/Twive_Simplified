@@ -13,6 +13,12 @@ A sample bash script to compile the firmware is provided, compile_example.sh. Re
 - Less layers, accessed through the thumb cluster
 - A few combos to access extra keys which did not fit
 
+## Drawbacks
+Having only 5 layers with 32 keys brings a few drawbacks
+
+- In the number layers '.' and ',' are missing and also are 'space' and 'backspace'
+- Media keys are only 3. Volume+, Volume- and Play/Pause
+- A few rarely used symbols are missing
 
 ### Details about layers and modifiers triggering
 - Modifiers: Positional hold-tap, "tap-preferred" with 175ms tapping term
